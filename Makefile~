@@ -194,7 +194,7 @@ $(OBJDIR)heap_5.o : $(FREERTOS_MEMMANG_SRC)heap_5.c
 # Demo application
 
 $(OBJDIR)main.o : $(APP_SRC)main.c
-	$(CC) $(CFLAG) -std=c99 $(CFLAGS) $(INC_FLAGS) $< $(OFLAG) $@
+	$(CXX) $(CFLAG) -std=c99 $(CFLAGS) $(INC_FLAGS) $< $(OFLAG) $@
 
 
 
