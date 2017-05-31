@@ -15,12 +15,12 @@ void print_int() {
 	lastWakeTime = xTaskGetTickCount();
 	for(;;) {
 		print_uart0("\r15");
-		//vTaskDelayUntil( &lastWakeTime, 1000 / portTICK_RATE_MS );
+		vTaskDelayUntil( &lastWakeTime, 1000 / portTICK_RATE_MS );
 	}
 }
 
 void print_char() {
-	//print_uart0("\rHello world");
+	print_uart0("\rHello world");
 	vTaskDelay( 1000 / portTICK_RATE_MS );
 }
 
