@@ -1,4 +1,4 @@
-.cpu cortex-m0
+.cpu cortex-m3
 .thumb
 
 .thumb_func
@@ -9,6 +9,6 @@ _start:
 
 .thumb_func
 reset:
-    bl c_entry
+    bl main
     b .
 
