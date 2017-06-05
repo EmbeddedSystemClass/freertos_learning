@@ -1,0 +1,18 @@
+INCLUDEFLAG = -I
+FREERTOS_SRC = FreeRTOS/
+INC_FREERTOS = $(FREERTOS_SRC)include/
+FREERTOS_MEMMANG_SRC = $(FREERTOS_SRC)portable/MemMang/
+APP_SRC = src/
+QEMU_SRC = qemu/
+#  Directory with platform specific source files
+FREERTOS_PORT_SRC = $(FREERTOS_SRC)portable/GCC/ARM_CM3/
+INC_FLAGS = $(INCLUDEFLAG)$(INC_FREERTOS) $(INCLUDEFLAG)$(FREERTOS_PORT_SRC) $(INCLUDEFLAG)$(APP_SRC)
+all:
+#  Main file compile
+
+	arm-none-eabi-gcc -mthumb -mcpu=cortex-m3 -T $(QEMU_SRC)lm3s6965.ld $(INC_FLAGS) $(APP_SRC)test.c $(QEMU_SRC)reset.S $(APP_SRC)syscalls.c $(FREERTOS_SRC)list.c  $(FREERTOS_SRC)tasks.c  $(FREERTOS_PORT_SRC)port.c $(FREERTOS_MEMMANG_SRC)heap_1.c $(FREERTOS_SRC)timers.c -o $(bin)main
+
+	arm-none-eabi-objcopy -O binary $(bin)main $(bin)main.bin
+clean:
+	rm *.o
+	rm *.bin
