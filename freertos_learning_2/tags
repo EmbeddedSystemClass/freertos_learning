@@ -4,7 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-APP_OBJS	Makefile	/^APP_OBJS = test.o$/;"	m
 APP_SRC	Makefile	/^APP_SRC = src\/$/;"	m
 ARDUINOJSON_DEFAULT_NESTING_LIMIT	ArduinoJson/Configuration.hpp	130;"	d
 ARDUINOJSON_DEFAULT_NESTING_LIMIT	ArduinoJson/Configuration.hpp	70;"	d
@@ -105,7 +104,6 @@ ArduinoJson	ArduinoJson/TypeTraits/RemoveConst.hpp	/^namespace ArduinoJson {$/;"
 ArduinoJson	ArduinoJson/TypeTraits/RemoveReference.hpp	/^namespace ArduinoJson {$/;"	n
 ArduinoStreamTraits	ArduinoJson/StringTraits/ArduinoStream.hpp	/^struct ArduinoStreamTraits {$/;"	s	namespace:ArduinoJson::Internals
 BaseType_t	FreeRTOS/include/portmacro.h	/^typedef long BaseType_t;$/;"	t
-BaseType_t	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	/^typedef long BaseType_t;$/;"	t
 Block	ArduinoJson/DynamicJsonBuffer.hpp	/^  struct Block : EmptyBlock {$/;"	s	class:ArduinoJson::DynamicJsonBufferBase
 BlockLink_t	FreeRTOS/portable/MemMang/heap_2.c	/^} BlockLink_t;$/;"	t	typeref:struct:A_BLOCK_LINK	file:
 BlockLink_t	FreeRTOS/portable/MemMang/heap_4.c	/^} BlockLink_t;$/;"	t	typeref:struct:A_BLOCK_LINK	file:
@@ -138,11 +136,9 @@ EventGroup_t	FreeRTOS/event_groups.c	/^} EventGroup_t;$/;"	t	typeref:struct:xEve
 FORCE_INLINE	ArduinoJson/Polyfills/attributes.hpp	11;"	d
 FORCE_INLINE	ArduinoJson/Polyfills/attributes.hpp	15;"	d
 FREERTOS_CONFIG_H	src/FreeRTOSConfig.h	72;"	d
-FREERTOS_MEMMANG_OBJS	Makefile	/^FREERTOS_MEMMANG_OBJS = heap_1.o$/;"	m
+FREERTOS_CONFIG_H	src/FreeRTOSConfig_m3.h	72;"	d
 FREERTOS_MEMMANG_SRC	Makefile	/^FREERTOS_MEMMANG_SRC = $(FREERTOS_SRC)portable\/MemMang\/$/;"	m
-FREERTOS_OBJS	Makefile	/^FREERTOS_OBJS = queue.o list.o tasks.o$/;"	m
-FREERTOS_PORT_OBJS	Makefile	/^FREERTOS_PORT_OBJS = port.o $/;"	m
-FREERTOS_PORT_SRC	Makefile	/^FREERTOS_PORT_SRC = $(FREERTOS_SRC)portable\/GCC\/ARM_CM0\/$/;"	m
+FREERTOS_PORT_SRC	Makefile	/^FREERTOS_PORT_SRC = $(FREERTOS_SRC)portable\/GCC\/ARM_CM3\/$/;"	m
 FREERTOS_SRC	Makefile	/^FREERTOS_SRC = FreeRTOS\/$/;"	m
 FloatTraits	ArduinoJson/TypeTraits/FloatTraits.hpp	/^struct FloatTraits {};$/;"	s	namespace:ArduinoJson::TypeTraits
 FloatTraits	ArduinoJson/TypeTraits/FloatTraits.hpp	/^struct FloatTraits<T, 4 \/*32bits*\/> {$/;"	s	namespace:ArduinoJson::TypeTraits
@@ -152,20 +148,28 @@ HeapRegion_t	FreeRTOS/include/portable.h	/^} HeapRegion_t;$/;"	t	typeref:struct:
 INCLUDEFLAG	Makefile	/^INCLUDEFLAG = -I$/;"	m
 INCLUDE_eTaskGetState	FreeRTOS/include/FreeRTOS.h	202;"	d
 INCLUDE_eTaskGetState	src/FreeRTOSConfig.h	137;"	d
+INCLUDE_eTaskGetState	src/FreeRTOSConfig_m3.h	137;"	d
 INCLUDE_uxTaskGetStackHighWaterMark	FreeRTOS/include/FreeRTOS.h	198;"	d
 INCLUDE_uxTaskPriorityGet	FreeRTOS/include/FreeRTOS.h	158;"	d
 INCLUDE_uxTaskPriorityGet	src/FreeRTOSConfig.h	131;"	d
+INCLUDE_uxTaskPriorityGet	src/FreeRTOSConfig_m3.h	131;"	d
 INCLUDE_vTaskCleanUpResources	src/FreeRTOSConfig.h	133;"	d
+INCLUDE_vTaskCleanUpResources	src/FreeRTOSConfig_m3.h	133;"	d
 INCLUDE_vTaskDelay	FreeRTOS/include/FreeRTOS.h	174;"	d
 INCLUDE_vTaskDelay	src/FreeRTOSConfig.h	136;"	d
+INCLUDE_vTaskDelay	src/FreeRTOSConfig_m3.h	136;"	d
 INCLUDE_vTaskDelayUntil	FreeRTOS/include/FreeRTOS.h	170;"	d
 INCLUDE_vTaskDelayUntil	src/FreeRTOSConfig.h	135;"	d
+INCLUDE_vTaskDelayUntil	src/FreeRTOSConfig_m3.h	135;"	d
 INCLUDE_vTaskDelete	FreeRTOS/include/FreeRTOS.h	162;"	d
 INCLUDE_vTaskDelete	src/FreeRTOSConfig.h	132;"	d
+INCLUDE_vTaskDelete	src/FreeRTOSConfig_m3.h	132;"	d
 INCLUDE_vTaskPrioritySet	FreeRTOS/include/FreeRTOS.h	154;"	d
 INCLUDE_vTaskPrioritySet	src/FreeRTOSConfig.h	130;"	d
+INCLUDE_vTaskPrioritySet	src/FreeRTOSConfig_m3.h	130;"	d
 INCLUDE_vTaskSuspend	FreeRTOS/include/FreeRTOS.h	166;"	d
 INCLUDE_vTaskSuspend	src/FreeRTOSConfig.h	134;"	d
+INCLUDE_vTaskSuspend	src/FreeRTOSConfig_m3.h	134;"	d
 INCLUDE_xQueueGetMutexHolder	FreeRTOS/include/FreeRTOS.h	186;"	d
 INCLUDE_xSemaphoreGetMutexHolder	FreeRTOS/include/FreeRTOS.h	190;"	d
 INCLUDE_xTaskAbortDelay	FreeRTOS/include/FreeRTOS.h	182;"	d
@@ -334,10 +338,9 @@ MiniListItem_t	FreeRTOS/include/list.h	/^typedef struct xMINI_LIST_ITEM MiniList
 NO_INLINE	ArduinoJson/Polyfills/attributes.hpp	12;"	d
 NO_INLINE	ArduinoJson/Polyfills/attributes.hpp	16;"	d
 No	ArduinoJson/TypeTraits/IsBaseOf.hpp	/^  typedef char No[2];$/;"	t	class:ArduinoJson::TypeTraits::IsBaseOf
-OBJDIR	Makefile	/^OBJDIR = obj\/$/;"	m
 PORTABLE_H	FreeRTOS/include/portable.h	75;"	d
 PORTMACRO_H	FreeRTOS/include/portmacro.h	72;"	d
-PORTMACRO_H	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	72;"	d
+PORTMACRO_H	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	68;"	d
 PRIVILEGED_DATA	FreeRTOS/include/mpu_wrappers.h	187;"	d
 PRIVILEGED_DATA	FreeRTOS/include/mpu_wrappers.h	194;"	d
 PRIVILEGED_FUNCTION	FreeRTOS/include/mpu_wrappers.h	181;"	d
@@ -354,6 +357,7 @@ Polyfills	ArduinoJson/Polyfills/parseFloat.hpp	/^namespace Polyfills {$/;"	n	nam
 Polyfills	ArduinoJson/Polyfills/parseInteger.hpp	/^namespace Polyfills {$/;"	n	namespace:ArduinoJson
 Prettyfier	ArduinoJson/Serialization/Prettyfier.hpp	/^  explicit Prettyfier(IndentedPrint<Print>& p) : _sink(p) {$/;"	f	class:ArduinoJson::Internals::Prettyfier
 Prettyfier	ArduinoJson/Serialization/Prettyfier.hpp	/^class Prettyfier {$/;"	c	namespace:ArduinoJson::Internals
+QEMU_SRC	Makefile	/^QEMU_SRC = qemu\/$/;"	m
 QUEUE_H	FreeRTOS/include/queue.h	72;"	d
 QUEUE_REGISTRY_ITEM	FreeRTOS/queue.c	/^	typedef struct QUEUE_REGISTRY_ITEM$/;"	s	file:
 QueueDefinition	FreeRTOS/queue.c	/^typedef struct QueueDefinition$/;"	s	file:
@@ -382,10 +386,8 @@ RemoveReference	ArduinoJson/TypeTraits/RemoveReference.hpp	/^struct RemoveRefere
 RemoveReference	ArduinoJson/TypeTraits/RemoveReference.hpp	/^struct RemoveReference<T&> {$/;"	s	namespace:ArduinoJson::TypeTraits
 SEMAPHORE_H	FreeRTOS/include/semphr.h	71;"	d
 STACK_MACROS_H	FreeRTOS/include/StackMacros.h	71;"	d
-STARTUP_OBJ	Makefile	/^STARTUP_OBJ = startup.o$/;"	m
 SemaphoreHandle_t	FreeRTOS/include/semphr.h	/^typedef QueueHandle_t SemaphoreHandle_t;$/;"	t
 StackType_t	FreeRTOS/include/portmacro.h	/^typedef portSTACK_TYPE StackType_t;$/;"	t
-StackType_t	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	/^typedef portSTACK_TYPE StackType_t;$/;"	t
 StaticEventGroup_t	FreeRTOS/include/FreeRTOS.h	/^} StaticEventGroup_t;$/;"	t	typeref:struct:xSTATIC_EVENT_GROUP
 StaticJsonBuffer	ArduinoJson/StaticJsonBuffer.hpp	/^  explicit StaticJsonBuffer() : StaticJsonBufferBase(_buffer, CAPACITY) {}$/;"	f	class:ArduinoJson::StaticJsonBuffer
 StaticJsonBuffer	ArduinoJson/StaticJsonBuffer.hpp	/^class StaticJsonBuffer : public StaticJsonBufferBase {$/;"	c	namespace:ArduinoJson
@@ -435,8 +437,6 @@ TaskParameters_t	FreeRTOS/include/task.h	/^} TaskParameters_t;$/;"	t	typeref:str
 TaskStatus_t	FreeRTOS/include/task.h	/^} TaskStatus_t;$/;"	t	typeref:struct:xTASK_STATUS
 TickType_t	FreeRTOS/include/portmacro.h	/^	typedef uint16_t TickType_t;$/;"	t
 TickType_t	FreeRTOS/include/portmacro.h	/^	typedef uint32_t TickType_t;$/;"	t
-TickType_t	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	/^	typedef uint16_t TickType_t;$/;"	t
-TickType_t	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	/^	typedef uint32_t TickType_t;$/;"	t
 TimeOut_t	FreeRTOS/include/task.h	/^} TimeOut_t;$/;"	t	typeref:struct:xTIME_OUT
 TimerCallbackFunction_t	FreeRTOS/include/timers.h	/^typedef void (*TimerCallbackFunction_t)( TimerHandle_t xTimer );$/;"	t
 TimerHandle_t	FreeRTOS/include/timers.h	/^typedef void * TimerHandle_t;$/;"	t
@@ -460,12 +460,18 @@ TypeTraits	ArduinoJson/TypeTraits/RemoveReference.hpp	/^namespace TypeTraits {$/
 UART0DR	src/test.c	/^volatile unsigned int * const UART0DR = (unsigned int *)0x4000C000;$/;"	v
 UART0DR	test.c	/^volatile unsigned int * const UART0DR = (unsigned int *)0x4000C000;$/;"	v
 UART0DR	test.cpp	/^volatile unsigned int * const UART0DR = (unsigned int *)0x4000C000;$/;"	v
+UART0_ADDR	src/syscalls.c	/^  UART0_ADDR = 0x4000C000,$/;"	e	enum:__anon2	file:
+UART_DR	src/syscalls.c	9;"	d	file:
+UART_FR	src/syscalls.c	10;"	d	file:
+UART_FR_RXFE	src/syscalls.c	/^  UART_FR_RXFE = 0x10,$/;"	e	enum:__anon2	file:
+UART_FR_TXFF	src/syscalls.c	/^  UART_FR_TXFF = 0x20,$/;"	e	enum:__anon2	file:
 UBaseType_t	FreeRTOS/include/portmacro.h	/^typedef unsigned long UBaseType_t;$/;"	t
-UBaseType_t	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	/^typedef unsigned long UBaseType_t;$/;"	t
 ValueSetter	ArduinoJson/Data/ValueSetter.hpp	/^struct ValueSetter {$/;"	s	namespace:ArduinoJson::Internals
 ValueSetter	ArduinoJson/Data/ValueSetter.hpp	/^struct ValueSetter<TSourceRef, typename TypeTraits::EnableIf<!StringTraits<$/;"	s	namespace:ArduinoJson::Internals
 ValueSetter	ArduinoJson/Data/ValueSetter.hpp	/^struct ValueSetter<TSourceRef, typename TypeTraits::EnableIf<StringTraits<$/;"	s	namespace:ArduinoJson::Internals
 Yes	ArduinoJson/TypeTraits/IsBaseOf.hpp	/^  typedef char Yes[1];$/;"	t	class:ArduinoJson::TypeTraits::IsBaseOf
+__cs3_reset	qemu/reset.S	/^__cs3_reset:$/;"	l
+__cs3_start_asm	qemu/reset.S	/^__cs3_start_asm:$/;"	l
 _allocator	ArduinoJson/DynamicJsonBuffer.hpp	/^  TAllocator _allocator;$/;"	m	class:ArduinoJson::DynamicJsonBufferBase
 _array	ArduinoJson/JsonArraySubscript.hpp	/^  JsonArray& _array;$/;"	m	class:ArduinoJson::JsonArraySubscript
 _buffer	ArduinoJson/Data/List.hpp	/^  JsonBuffer *_buffer;$/;"	m	class:ArduinoJson::Internals::List
@@ -473,16 +479,20 @@ _buffer	ArduinoJson/Deserialization/JsonParser.hpp	/^  JsonBuffer *_buffer;$/;"	
 _buffer	ArduinoJson/StaticJsonBuffer.hpp	/^  char _buffer[CAPACITY];$/;"	m	class:ArduinoJson::StaticJsonBuffer
 _buffer	ArduinoJson/StaticJsonBuffer.hpp	/^  char* _buffer;$/;"	m	class:ArduinoJson::StaticJsonBufferBase
 _capacity	ArduinoJson/StaticJsonBuffer.hpp	/^  size_t _capacity;$/;"	m	class:ArduinoJson::StaticJsonBufferBase
+_close	src/syscalls.c	/^int _close(int file) {$/;"	f
 _content	ArduinoJson/JsonVariant.hpp	/^  Internals::JsonVariantContent _content;$/;"	m	class:ArduinoJson::JsonVariant
 _current	ArduinoJson/StringTraits/ArduinoStream.hpp	/^    char _current, _next;$/;"	m	class:ArduinoJson::Internals::ArduinoStreamTraits::Reader
 _current	ArduinoJson/StringTraits/StdStream.hpp	/^    char _current, _next;$/;"	m	class:ArduinoJson::Internals::StdStreamTraits::Reader
 _firstNode	ArduinoJson/Data/List.hpp	/^  node_type *_firstNode;$/;"	m	class:ArduinoJson::Internals::List
+_fstat	src/syscalls.c	/^int _fstat(int file, struct stat *st) {$/;"	f
 _head	ArduinoJson/DynamicJsonBuffer.hpp	/^  Block* _head;$/;"	m	class:ArduinoJson::DynamicJsonBufferBase
 _inString	ArduinoJson/Serialization/Prettyfier.hpp	/^  bool _inString;$/;"	m	class:ArduinoJson::Internals::Prettyfier
 _index	ArduinoJson/JsonArraySubscript.hpp	/^  const size_t _index;$/;"	m	class:ArduinoJson::JsonArraySubscript
+_isatty	src/syscalls.c	/^int _isatty(int file) {$/;"	f
 _key	ArduinoJson/JsonObjectSubscript.hpp	/^  TStringRef _key;$/;"	m	class:ArduinoJson::JsonObjectSubscript
 _length	ArduinoJson/DynamicJsonBuffer.hpp	/^    int _length;$/;"	m	class:ArduinoJson::DynamicJsonBufferBase::String
 _length	ArduinoJson/Serialization/JsonWriter.hpp	/^  size_t _length;$/;"	m	class:ArduinoJson::Internals::JsonWriter
+_lseek	src/syscalls.c	/^int _lseek(int file, int ptr, int dir) {$/;"	f
 _nestingLimit	ArduinoJson/Deserialization/JsonParser.hpp	/^  uint8_t _nestingLimit;$/;"	m	class:ArduinoJson::Internals::JsonParser
 _next	ArduinoJson/StringTraits/ArduinoStream.hpp	/^    char _current, _next;$/;"	m	class:ArduinoJson::Internals::ArduinoStreamTraits::Reader
 _next	ArduinoJson/StringTraits/StdStream.hpp	/^    char _current, _next;$/;"	m	class:ArduinoJson::Internals::StdStreamTraits::Reader
@@ -490,6 +500,7 @@ _nextBlockCapacity	ArduinoJson/DynamicJsonBuffer.hpp	/^  size_t _nextBlockCapaci
 _node	ArduinoJson/Data/ListConstIterator.hpp	/^  const ListNode<T> *_node;$/;"	m	class:ArduinoJson::Internals::ListConstIterator
 _node	ArduinoJson/Data/ListIterator.hpp	/^  ListNode<T> *_node;$/;"	m	class:ArduinoJson::Internals::ListIterator
 _object	ArduinoJson/JsonObjectSubscript.hpp	/^  JsonObject& _object;$/;"	m	class:ArduinoJson::JsonObjectSubscript
+_open	src/syscalls.c	/^int _open(const char *name, int flags, int mode) {$/;"	f
 _os	ArduinoJson/Serialization/StreamPrintAdapter.hpp	/^  std::ostream& _os;$/;"	m	class:ArduinoJson::Internals::StreamPrintAdapter
 _parent	ArduinoJson/DynamicJsonBuffer.hpp	/^    DynamicJsonBufferBase* _parent;$/;"	m	class:ArduinoJson::DynamicJsonBufferBase::String
 _parent	ArduinoJson/StaticJsonBuffer.hpp	/^    StaticJsonBufferBase* _parent;$/;"	m	class:ArduinoJson::StaticJsonBufferBase::String
@@ -497,7 +508,9 @@ _previousChar	ArduinoJson/Serialization/Prettyfier.hpp	/^  char _previousChar;$/
 _ptr	ArduinoJson/Deserialization/StringWriter.hpp	/^  TChar* _ptr;$/;"	m	class:ArduinoJson::Internals::StringWriter
 _ptr	ArduinoJson/StringTraits/CharPointer.hpp	/^    const TChar* _ptr;$/;"	m	class:ArduinoJson::Internals::CharPointerTraits::Reader
 _ptr	ArduinoJson/StringTraits/FlashString.hpp	/^    const char* _ptr;$/;"	m	class:ArduinoJson::Internals::StringTraits::Reader
+_read	src/syscalls.c	/^int _read(int file, char *ptr, int len) {$/;"	f
 _reader	ArduinoJson/Deserialization/JsonParser.hpp	/^  TReader _reader;$/;"	m	class:ArduinoJson::Internals::JsonParser
+_sbrk	src/syscalls.c	/^caddr_t _sbrk(int incr) {$/;"	f
 _sink	ArduinoJson/Serialization/JsonWriter.hpp	/^  Print &_sink;$/;"	m	class:ArduinoJson::Internals::JsonWriter
 _sink	ArduinoJson/Serialization/Prettyfier.hpp	/^  IndentedPrint<Print>& _sink;$/;"	m	class:ArduinoJson::Internals::Prettyfier
 _size	ArduinoJson/StaticJsonBuffer.hpp	/^  size_t _size;$/;"	m	class:ArduinoJson::StaticJsonBufferBase
@@ -510,6 +523,7 @@ _str	ArduinoJson/Serialization/DynamicStringBuilder.hpp	/^  TString &_str;$/;"	m
 _stream	ArduinoJson/StringTraits/ArduinoStream.hpp	/^    Stream& _stream;$/;"	m	class:ArduinoJson::Internals::ArduinoStreamTraits::Reader
 _stream	ArduinoJson/StringTraits/StdStream.hpp	/^    std::istream& _stream;$/;"	m	class:ArduinoJson::Internals::StdStreamTraits::Reader
 _type	ArduinoJson/JsonVariant.hpp	/^  Internals::JsonVariantType _type;$/;"	m	class:ArduinoJson::JsonVariant
+_write	src/syscalls.c	/^int _write(int file, char *ptr, int len) {$/;"	f
 _writePtr	ArduinoJson/Deserialization/StringWriter.hpp	/^    TChar** _writePtr;$/;"	m	class:ArduinoJson::Internals::StringWriter::String
 _writer	ArduinoJson/Deserialization/JsonParser.hpp	/^  TWriter _writer;$/;"	m	class:ArduinoJson::Internals::JsonParser
 add	ArduinoJson/Data/List.hpp	/^  iterator add() {$/;"	f	class:ArduinoJson::Internals::List
@@ -550,7 +564,6 @@ beginObject	ArduinoJson/Serialization/JsonWriter.hpp	/^  void beginObject() {$/;
 bytesWritten	ArduinoJson/Serialization/JsonWriter.hpp	/^  size_t bytesWritten() const {$/;"	f	class:ArduinoJson::Internals::JsonWriter
 cRxLock	FreeRTOS/queue.c	/^	volatile int8_t cRxLock;		\/*< Stores the number of items received from the queue (removed from the queue) while the queue was locked.  Set to queueUNLOCKED when the queue is not locked. *\/$/;"	m	struct:QueueDefinition	file:
 cTxLock	FreeRTOS/queue.c	/^	volatile int8_t cTxLock;		\/*< Stores the number of items transmitted to the queue (added to the queue) while the queue was locked.  Set to queueUNLOCKED when the queue is not locked. *\/$/;"	m	struct:QueueDefinition	file:
-c_entry	src/test.c	/^void c_entry() {$/;"	f
 c_entry	test.c	/^void c_entry() {$/;"	f
 c_entry	test.cpp	/^void c_entry() {$/;"	f
 c_str	ArduinoJson/Deserialization/StringWriter.hpp	/^    const char* c_str() const {$/;"	f	class:ArduinoJson::Internals::StringWriter::String
@@ -565,67 +578,98 @@ configADJUSTED_HEAP_SIZE	FreeRTOS/portable/MemMang/heap_2.c	96;"	d	file:
 configAPPLICATION_ALLOCATED_HEAP	FreeRTOS/include/FreeRTOS.h	764;"	d
 configASSERT	FreeRTOS/include/FreeRTOS.h	276;"	d
 configASSERT	src/FreeRTOSConfig.h	141;"	d
+configASSERT	src/FreeRTOSConfig_m3.h	141;"	d
 configASSERT_DEFINED	FreeRTOS/include/FreeRTOS.h	277;"	d
 configASSERT_DEFINED	FreeRTOS/include/FreeRTOS.h	279;"	d
 configCHECK_FOR_STACK_OVERFLOW	FreeRTOS/include/FreeRTOS.h	408;"	d
 configCHECK_FOR_STACK_OVERFLOW	src/FreeRTOSConfig.h	111;"	d
+configCHECK_FOR_STACK_OVERFLOW	src/FreeRTOSConfig_m3.h	111;"	d
 configCPU_CLOCK_HZ	src/FreeRTOSConfig.h	100;"	d
+configCPU_CLOCK_HZ	src/FreeRTOSConfig_m3.h	100;"	d
 configENABLE_BACKWARD_COMPATIBILITY	FreeRTOS/include/FreeRTOS.h	820;"	d
 configEXPECTED_IDLE_TIME_BEFORE_SLEEP	FreeRTOS/include/FreeRTOS.h	700;"	d
 configGENERATE_RUN_TIME_STATS	FreeRTOS/include/FreeRTOS.h	662;"	d
 configGENERATE_RUN_TIME_STATS	src/FreeRTOSConfig.h	116;"	d
+configGENERATE_RUN_TIME_STATS	src/FreeRTOSConfig_m3.h	116;"	d
 configIDLE_SHOULD_YIELD	FreeRTOS/include/FreeRTOS.h	268;"	d
 configIDLE_SHOULD_YIELD	src/FreeRTOSConfig.h	108;"	d
+configIDLE_SHOULD_YIELD	src/FreeRTOSConfig_m3.h	108;"	d
 configINCLUDE_APPLICATION_DEFINED_PRIVILEGED_FUNCTIONS	FreeRTOS/include/FreeRTOS.h	732;"	d
+configKERNEL_INTERRUPT_PRIORITY	FreeRTOS/portable/GCC/ARM_CM3/port.c	78;"	d	file:
 configLIST_VOLATILE	FreeRTOS/include/list.h	134;"	d
 configMAX_CO_ROUTINE_PRIORITIES	src/FreeRTOSConfig.h	120;"	d
+configMAX_CO_ROUTINE_PRIORITIES	src/FreeRTOSConfig_m3.h	120;"	d
 configMAX_PRIORITIES	src/FreeRTOSConfig.h	102;"	d
+configMAX_PRIORITIES	src/FreeRTOSConfig_m3.h	102;"	d
+configMAX_SYSCALL_INTERRUPT_PRIORITY	src/FreeRTOSConfig.h	121;"	d
+configMAX_SYSCALL_INTERRUPT_PRIORITY	src/FreeRTOSConfig_m3.h	121;"	d
 configMAX_TASK_NAME_LEN	FreeRTOS/include/FreeRTOS.h	264;"	d
 configMAX_TASK_NAME_LEN	src/FreeRTOSConfig.h	105;"	d
+configMAX_TASK_NAME_LEN	src/FreeRTOSConfig_m3.h	105;"	d
 configMINIMAL_STACK_SIZE	src/FreeRTOSConfig.h	103;"	d
+configMINIMAL_STACK_SIZE	src/FreeRTOSConfig_m3.h	103;"	d
 configNUM_THREAD_LOCAL_STORAGE_POINTERS	FreeRTOS/include/FreeRTOS.h	236;"	d
 configPOST_SLEEP_PROCESSING	FreeRTOS/include/FreeRTOS.h	716;"	d
 configPRE_SLEEP_PROCESSING	FreeRTOS/include/FreeRTOS.h	712;"	d
 configQUEUE_REGISTRY_SIZE	FreeRTOS/include/FreeRTOS.h	320;"	d
 configQUEUE_REGISTRY_SIZE	src/FreeRTOSConfig.h	110;"	d
+configQUEUE_REGISTRY_SIZE	src/FreeRTOSConfig_m3.h	110;"	d
 configSUPPORT_DYNAMIC_ALLOCATION	FreeRTOS/include/FreeRTOS.h	782;"	d
 configSUPPORT_STATIC_ALLOCATION	FreeRTOS/include/FreeRTOS.h	777;"	d
+configSYSTICK_CLOCK_HZ	FreeRTOS/portable/GCC/ARM_CM3/port.c	82;"	d	file:
 configTICK_RATE_HZ	src/FreeRTOSConfig.h	101;"	d
+configTICK_RATE_HZ	src/FreeRTOSConfig_m3.h	101;"	d
 configTIMER_QUEUE_LENGTH	src/FreeRTOSConfig.h	125;"	d
+configTIMER_QUEUE_LENGTH	src/FreeRTOSConfig_m3.h	125;"	d
 configTIMER_TASK_PRIORITY	src/FreeRTOSConfig.h	124;"	d
+configTIMER_TASK_PRIORITY	src/FreeRTOSConfig_m3.h	124;"	d
 configTIMER_TASK_STACK_DEPTH	src/FreeRTOSConfig.h	126;"	d
+configTIMER_TASK_STACK_DEPTH	src/FreeRTOSConfig_m3.h	126;"	d
 configTOTAL_HEAP_SIZE	src/FreeRTOSConfig.h	104;"	d
+configTOTAL_HEAP_SIZE	src/FreeRTOSConfig_m3.h	104;"	d
 configUSE_16_BIT_TICKS	src/FreeRTOSConfig.h	107;"	d
+configUSE_16_BIT_TICKS	src/FreeRTOSConfig_m3.h	107;"	d
 configUSE_ALTERNATIVE_API	FreeRTOS/include/FreeRTOS.h	256;"	d
 configUSE_APPLICATION_TASK_TAG	FreeRTOS/include/FreeRTOS.h	232;"	d
 configUSE_APPLICATION_TASK_TAG	src/FreeRTOSConfig.h	114;"	d
+configUSE_APPLICATION_TASK_TAG	src/FreeRTOSConfig_m3.h	114;"	d
 configUSE_COUNTING_SEMAPHORES	FreeRTOS/include/FreeRTOS.h	252;"	d
 configUSE_COUNTING_SEMAPHORES	src/FreeRTOSConfig.h	115;"	d
+configUSE_COUNTING_SEMAPHORES	src/FreeRTOSConfig_m3.h	115;"	d
 configUSE_CO_ROUTINES	FreeRTOS/include/FreeRTOS.h	150;"	d
 configUSE_CO_ROUTINES	src/FreeRTOSConfig.h	119;"	d
+configUSE_CO_ROUTINES	src/FreeRTOSConfig_m3.h	119;"	d
 configUSE_DAEMON_TASK_STARTUP_HOOK	FreeRTOS/include/FreeRTOS.h	228;"	d
 configUSE_IDLE_HOOK	src/FreeRTOSConfig.h	98;"	d
+configUSE_IDLE_HOOK	src/FreeRTOSConfig_m3.h	98;"	d
 configUSE_LIST_DATA_INTEGRITY_CHECK_BYTES	FreeRTOS/include/projdefs.h	101;"	d
 configUSE_MALLOC_FAILED_HOOK	FreeRTOS/include/FreeRTOS.h	684;"	d
 configUSE_MALLOC_FAILED_HOOK	src/FreeRTOSConfig.h	113;"	d
+configUSE_MALLOC_FAILED_HOOK	src/FreeRTOSConfig_m3.h	113;"	d
 configUSE_MUTEXES	FreeRTOS/include/FreeRTOS.h	244;"	d
 configUSE_MUTEXES	src/FreeRTOSConfig.h	109;"	d
+configUSE_MUTEXES	src/FreeRTOSConfig_m3.h	109;"	d
 configUSE_NEWLIB_REENTRANT	FreeRTOS/include/FreeRTOS.h	108;"	d
 configUSE_PORT_OPTIMISED_TASK_SELECTION	FreeRTOS/include/FreeRTOS.h	760;"	d
 configUSE_PREEMPTION	src/FreeRTOSConfig.h	97;"	d
+configUSE_PREEMPTION	src/FreeRTOSConfig_m3.h	97;"	d
 configUSE_QUEUE_SETS	FreeRTOS/include/FreeRTOS.h	720;"	d
 configUSE_RECURSIVE_MUTEXES	FreeRTOS/include/FreeRTOS.h	240;"	d
 configUSE_RECURSIVE_MUTEXES	src/FreeRTOSConfig.h	112;"	d
+configUSE_RECURSIVE_MUTEXES	src/FreeRTOSConfig_m3.h	112;"	d
 configUSE_STATS_FORMATTING_FUNCTIONS	FreeRTOS/include/FreeRTOS.h	736;"	d
 configUSE_TASK_FPU_SUPPORT	FreeRTOS/include/FreeRTOS.h	861;"	d
 configUSE_TASK_NOTIFICATIONS	FreeRTOS/include/FreeRTOS.h	768;"	d
 configUSE_TICKLESS_IDLE	FreeRTOS/include/FreeRTOS.h	708;"	d
 configUSE_TICK_HOOK	src/FreeRTOSConfig.h	99;"	d
+configUSE_TICK_HOOK	src/FreeRTOSConfig_m3.h	99;"	d
 configUSE_TIMERS	FreeRTOS/include/FreeRTOS.h	248;"	d
 configUSE_TIMERS	src/FreeRTOSConfig.h	123;"	d
+configUSE_TIMERS	src/FreeRTOSConfig_m3.h	123;"	d
 configUSE_TIME_SLICING	FreeRTOS/include/FreeRTOS.h	728;"	d
 configUSE_TRACE_FACILITY	FreeRTOS/include/FreeRTOS.h	744;"	d
 configUSE_TRACE_FACILITY	src/FreeRTOSConfig.h	106;"	d
+configUSE_TRACE_FACILITY	src/FreeRTOSConfig_m3.h	106;"	d
 const_iterator	ArduinoJson/Data/List.hpp	/^  typedef ListConstIterator<T> const_iterator;$/;"	t	class:ArduinoJson::Internals::List
 containsKey	ArduinoJson/JsonObject.hpp	/^  bool containsKey(const TString* key) const {$/;"	f	class:ArduinoJson::JsonObject
 containsKey	ArduinoJson/JsonObject.hpp	/^  containsKey(const TString& key) const {$/;"	f	class:ArduinoJson::JsonObject
@@ -666,27 +710,27 @@ downcast	ArduinoJson/Serialization/JsonPrintable.hpp	/^  const T &downcast() con
 duplicate	ArduinoJson/StringTraits/CharPointer.hpp	/^  static char* duplicate(const TChar* str, Buffer* buffer) {$/;"	f	struct:ArduinoJson::Internals::CharPointerTraits
 duplicate	ArduinoJson/StringTraits/FlashString.hpp	/^  static char* duplicate(const __FlashStringHelper* str, Buffer* buffer) {$/;"	f	struct:ArduinoJson::Internals::StringTraits
 duplicate	ArduinoJson/StringTraits/StdString.hpp	/^  static char* duplicate(const TString& str, Buffer* buffer) {$/;"	f	struct:ArduinoJson::Internals::StdStringTraits
-eAbortSleep	FreeRTOS/include/task.h	/^	eAbortSleep = 0,		\/* A task has been made ready or a context switch pended since portSUPPORESS_TICKS_AND_SLEEP() was called - abort entering a sleep mode. *\/$/;"	e	enum:__anon6
-eBlocked	FreeRTOS/include/task.h	/^	eBlocked,		\/* The task being queried is in the Blocked state. *\/$/;"	e	enum:__anon4
+eAbortSleep	FreeRTOS/include/task.h	/^	eAbortSleep = 0,		\/* A task has been made ready or a context switch pended since portSUPPORESS_TICKS_AND_SLEEP() was called - abort entering a sleep mode. *\/$/;"	e	enum:__anon7
+eBlocked	FreeRTOS/include/task.h	/^	eBlocked,		\/* The task being queried is in the Blocked state. *\/$/;"	e	enum:__anon5
 eCurrentState	FreeRTOS/include/task.h	/^	eTaskState eCurrentState;		\/* The state in which the task existed when the structure was populated. *\/$/;"	m	struct:xTASK_STATUS
-eDeleted	FreeRTOS/include/task.h	/^	eDeleted,		\/* The task being queried has been deleted, but its TCB has not yet been freed. *\/$/;"	e	enum:__anon4
-eIncrement	FreeRTOS/include/task.h	/^	eIncrement,					\/* Increment the task's notification value. *\/$/;"	e	enum:__anon5
-eInvalid	FreeRTOS/include/task.h	/^	eInvalid			\/* Used as an 'invalid state' value. *\/$/;"	e	enum:__anon4
-eNoAction	FreeRTOS/include/task.h	/^	eNoAction = 0,				\/* Notify the task without updating its notify value. *\/$/;"	e	enum:__anon5
-eNoTasksWaitingTimeout	FreeRTOS/include/task.h	/^	eNoTasksWaitingTimeout	\/* No tasks are waiting for a timeout so it is safe to enter a sleep mode that can only be exited by an external interrupt. *\/$/;"	e	enum:__anon6
-eNotifyAction	FreeRTOS/include/task.h	/^} eNotifyAction;$/;"	t	typeref:enum:__anon5
-eReady	FreeRTOS/include/task.h	/^	eReady,			\/* The task being queried is in a read or pending ready list. *\/$/;"	e	enum:__anon4
-eRunning	FreeRTOS/include/task.h	/^	eRunning = 0,	\/* A task is querying the state of itself, so must be running. *\/$/;"	e	enum:__anon4
-eSetBits	FreeRTOS/include/task.h	/^	eSetBits,					\/* Set bits in the task's notification value. *\/$/;"	e	enum:__anon5
-eSetValueWithOverwrite	FreeRTOS/include/task.h	/^	eSetValueWithOverwrite,		\/* Set the task's notification value to a specific value even if the previous value has not yet been read by the task. *\/$/;"	e	enum:__anon5
-eSetValueWithoutOverwrite	FreeRTOS/include/task.h	/^	eSetValueWithoutOverwrite	\/* Set the task's notification value if the previous value has been read by the task. *\/$/;"	e	enum:__anon5
-eSleepModeStatus	FreeRTOS/include/task.h	/^} eSleepModeStatus;$/;"	t	typeref:enum:__anon6
-eStandardSleep	FreeRTOS/include/task.h	/^	eStandardSleep,			\/* Enter a sleep mode that will not last any longer than the expected idle time. *\/$/;"	e	enum:__anon6
-eSuspended	FreeRTOS/include/task.h	/^	eSuspended,		\/* The task being queried is in the Suspended state, or is in the Blocked state with an infinite time out. *\/$/;"	e	enum:__anon4
+eDeleted	FreeRTOS/include/task.h	/^	eDeleted,		\/* The task being queried has been deleted, but its TCB has not yet been freed. *\/$/;"	e	enum:__anon5
+eIncrement	FreeRTOS/include/task.h	/^	eIncrement,					\/* Increment the task's notification value. *\/$/;"	e	enum:__anon6
+eInvalid	FreeRTOS/include/task.h	/^	eInvalid			\/* Used as an 'invalid state' value. *\/$/;"	e	enum:__anon5
+eNoAction	FreeRTOS/include/task.h	/^	eNoAction = 0,				\/* Notify the task without updating its notify value. *\/$/;"	e	enum:__anon6
+eNoTasksWaitingTimeout	FreeRTOS/include/task.h	/^	eNoTasksWaitingTimeout	\/* No tasks are waiting for a timeout so it is safe to enter a sleep mode that can only be exited by an external interrupt. *\/$/;"	e	enum:__anon7
+eNotifyAction	FreeRTOS/include/task.h	/^} eNotifyAction;$/;"	t	typeref:enum:__anon6
+eReady	FreeRTOS/include/task.h	/^	eReady,			\/* The task being queried is in a read or pending ready list. *\/$/;"	e	enum:__anon5
+eRunning	FreeRTOS/include/task.h	/^	eRunning = 0,	\/* A task is querying the state of itself, so must be running. *\/$/;"	e	enum:__anon5
+eSetBits	FreeRTOS/include/task.h	/^	eSetBits,					\/* Set bits in the task's notification value. *\/$/;"	e	enum:__anon6
+eSetValueWithOverwrite	FreeRTOS/include/task.h	/^	eSetValueWithOverwrite,		\/* Set the task's notification value to a specific value even if the previous value has not yet been read by the task. *\/$/;"	e	enum:__anon6
+eSetValueWithoutOverwrite	FreeRTOS/include/task.h	/^	eSetValueWithoutOverwrite	\/* Set the task's notification value if the previous value has been read by the task. *\/$/;"	e	enum:__anon6
+eSleepModeStatus	FreeRTOS/include/task.h	/^} eSleepModeStatus;$/;"	t	typeref:enum:__anon7
+eStandardSleep	FreeRTOS/include/task.h	/^	eStandardSleep,			\/* Enter a sleep mode that will not last any longer than the expected idle time. *\/$/;"	e	enum:__anon7
+eSuspended	FreeRTOS/include/task.h	/^	eSuspended,		\/* The task being queried is in the Suspended state, or is in the Blocked state with an infinite time out. *\/$/;"	e	enum:__anon5
 eTaskConfirmSleepModeStatus	FreeRTOS/tasks.c	/^	eSleepModeStatus eTaskConfirmSleepModeStatus( void )$/;"	f
 eTaskGetState	FreeRTOS/include/mpu_wrappers.h	100;"	d
 eTaskGetState	FreeRTOS/tasks.c	/^	eTaskState eTaskGetState( TaskHandle_t xTask )$/;"	f
-eTaskState	FreeRTOS/include/task.h	/^} eTaskState;$/;"	t	typeref:enum:__anon4
+eTaskState	FreeRTOS/include/task.h	/^} eTaskState;$/;"	t	typeref:enum:__anon5
 eTaskStateGet	FreeRTOS/include/FreeRTOS.h	824;"	d
 eat	ArduinoJson/Deserialization/JsonParser.hpp	/^  FORCE_INLINE bool eat(char charToSkip) {$/;"	f	class:ArduinoJson::Internals::JsonParser
 eat	ArduinoJson/Deserialization/JsonParserImpl.hpp	/^inline bool ArduinoJson::Internals::JsonParser<TReader, TWriter>::eat($/;"	f	class:ArduinoJson::Internals::JsonParser
@@ -745,6 +789,7 @@ heapMINIMUM_BLOCK_SIZE	FreeRTOS/portable/MemMang/heap_2.c	123;"	d	file:
 heapMINIMUM_BLOCK_SIZE	FreeRTOS/portable/MemMang/heap_4.c	95;"	d	file:
 heapMINIMUM_BLOCK_SIZE	FreeRTOS/portable/MemMang/heap_5.c	129;"	d	file:
 heapSTRUCT_SIZE	FreeRTOS/portable/MemMang/heap_2.c	/^static const uint16_t heapSTRUCT_SIZE	= ( ( sizeof ( BlockLink_t ) + ( portBYTE_ALIGNMENT - 1 ) ) & ~portBYTE_ALIGNMENT_MASK );$/;"	v	file:
+heap_end	src/syscalls.c	/^static char *heap_end = 0;$/;"	v	file:
 impl	ArduinoJson/JsonVariantBase.hpp	/^  const TImpl *impl() const {$/;"	f	class:ArduinoJson::JsonVariantBase
 inEmptyBlock	ArduinoJson/Serialization/Prettyfier.hpp	/^  bool inEmptyBlock() {$/;"	f	class:ArduinoJson::Internals::Prettyfier
 indent	ArduinoJson/Serialization/IndentedPrint.hpp	/^  void indent() {$/;"	f	class:ArduinoJson::Internals::IndentedPrint
@@ -807,6 +852,7 @@ listTEST_LIST_INTEGRITY	FreeRTOS/include/list.h	157;"	d
 listTEST_LIST_INTEGRITY	FreeRTOS/include/list.h	174;"	d
 listTEST_LIST_ITEM_INTEGRITY	FreeRTOS/include/list.h	156;"	d
 listTEST_LIST_ITEM_INTEGRITY	FreeRTOS/include/list.h	173;"	d
+main	src/test.c	/^void main() {$/;"	f
 makeParser	ArduinoJson/Deserialization/JsonParser.hpp	/^  static TParser makeParser(TJsonBuffer *buffer, TChar *json,$/;"	f	struct:ArduinoJson::Internals::JsonParserBuilder
 makeParser	ArduinoJson/Deserialization/JsonParser.hpp	/^  static TParser makeParser(TJsonBuffer *buffer, TString &json,$/;"	f	struct:ArduinoJson::Internals::JsonParserBuilder
 makeParser	ArduinoJson/Deserialization/JsonParser.hpp	/^inline typename JsonParserBuilder<TJsonBuffer, TString>::TParser makeParser($/;"	f	namespace:ArduinoJson::Internals
@@ -816,15 +862,7 @@ mantissa_bits	ArduinoJson/TypeTraits/FloatTraits.hpp	/^  static const short mant
 mantissa_max	ArduinoJson/TypeTraits/FloatTraits.hpp	/^  static const mantissa_type mantissa_max =$/;"	m	struct:ArduinoJson::TypeTraits::FloatTraits
 mantissa_type	ArduinoJson/TypeTraits/FloatTraits.hpp	/^  typedef int32_t mantissa_type;$/;"	t	struct:ArduinoJson::TypeTraits::FloatTraits
 mantissa_type	ArduinoJson/TypeTraits/FloatTraits.hpp	/^  typedef int64_t mantissa_type;$/;"	t	struct:ArduinoJson::TypeTraits::FloatTraits
-mcpu	Makefile	/^	arm-linux-gnueabi-as --warn -mcpu=cortex-m0 startup.s -o startup.o$/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  croutine.o -c $(FREERTOS_SRC)croutine.c $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  event_groups.o -c $(FREERTOS_SRC)event_groups.c $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  heap_1.o -c $(FREERTOS_MEMMANG_SRC)heap_1.c $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  list.o -c $(FREERTOS_SRC)list.c $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  port.o -c $(FREERTOS_PORT_SRC)port.c $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  tasks.o -c $(FREERTOS_SRC)tasks.c $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  test.o -c $(APP_SRC)test.c     $/;"	m
-mcpu	Makefile	/^	arm-linux-gnueabi-gcc -Wall -O2  -nostartfiles -ffreestanding -mcpu=cortex-m0  -mthumb $(INC_FLAGS) -o  timers.o -c $(FREERTOS_SRC)timers.c $/;"	m
+mcpu	Makefile	/^	arm-none-eabi-gcc -mthumb -mcpu=cortex-m3 -T $(QEMU_SRC)lm3s6965.ld $(INC_FLAGS) $(APP_SRC)test.c $(QEMU_SRC)reset.S $(APP_SRC)syscalls.c $(FREERTOS_SRC)list.c  $(FREERTOS_SRC)tasks.c  $(FREERTOS_PORT_SRC)port.c $(FREERTOS_MEMMANG_SRC)heap_1.c $(FREERTOS_SRC)timers.c -o $(bin)main$/;"	m
 measureLength	ArduinoJson/Serialization/JsonPrintable.hpp	/^  size_t measureLength() const {$/;"	f	class:ArduinoJson::Internals::JsonPrintable
 measurePrettyLength	ArduinoJson/Serialization/JsonPrintable.hpp	/^  size_t measurePrettyLength() const {$/;"	f	class:ArduinoJson::Internals::JsonPrintable
 move	ArduinoJson/StringTraits/ArduinoStream.hpp	/^    void move() {$/;"	f	class:ArduinoJson::Internals::ArduinoStreamTraits::Reader
@@ -918,13 +956,14 @@ parseString	ArduinoJson/Deserialization/JsonParserImpl.hpp	/^ArduinoJson::Intern
 parseStringTo	ArduinoJson/Deserialization/JsonParserImpl.hpp	/^inline bool ArduinoJson::Internals::JsonParser<TReader, TWriter>::parseStringTo($/;"	f	class:ArduinoJson::Internals::JsonParser
 parseVariant	ArduinoJson/Deserialization/JsonParser.hpp	/^  JsonVariant parseVariant() {$/;"	f	class:ArduinoJson::Internals::JsonParser
 pcHead	FreeRTOS/queue.c	/^	int8_t *pcHead;					\/*< Points to the beginning of the queue storage area. *\/$/;"	m	struct:QueueDefinition	file:
+pcInterruptPriorityRegisters	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	 static const volatile unsigned char * const pcInterruptPriorityRegisters = ( const volatile unsigned char * const ) portNVIC_IP_REGISTERS_OFFSET_16;$/;"	v	file:
 pcName	FreeRTOS/include/task.h	/^	const char * const pcName;	\/*lint !e971 Unqualified char types are allowed for strings and single characters only. *\/$/;"	m	struct:xTASK_PARAMETERS
 pcQueueGetName	FreeRTOS/include/FreeRTOS.h	326;"	d
 pcQueueGetName	FreeRTOS/include/mpu_wrappers.h	155;"	d
 pcQueueGetName	FreeRTOS/queue.c	/^	const char *pcQueueGetName( QueueHandle_t xQueue ) \/*lint !e971 Unqualified char types are allowed for strings and single characters only. *\/$/;"	f
 pcQueueGetQueueName	FreeRTOS/include/FreeRTOS.h	841;"	d
 pcQueueName	FreeRTOS/queue.c	/^		const char *pcQueueName; \/*lint !e971 Unqualified char types are allowed for strings and single characters only. *\/$/;"	m	struct:QUEUE_REGISTRY_ITEM	file:
-pcReadFrom	FreeRTOS/queue.c	/^		int8_t *pcReadFrom;			\/*< Points to the last place that a queued item was read from when the structure is used as a queue. *\/$/;"	m	union:QueueDefinition::__anon2	file:
+pcReadFrom	FreeRTOS/queue.c	/^		int8_t *pcReadFrom;			\/*< Points to the last place that a queued item was read from when the structure is used as a queue. *\/$/;"	m	union:QueueDefinition::__anon3	file:
 pcTail	FreeRTOS/queue.c	/^	int8_t *pcTail;					\/*< Points to the byte at the end of the queue storage area.  Once more byte is allocated than necessary to store the queue items, this is used as a marker. *\/$/;"	m	struct:QueueDefinition	file:
 pcTaskGetName	FreeRTOS/include/mpu_wrappers.h	109;"	d
 pcTaskGetName	FreeRTOS/tasks.c	/^char *pcTaskGetName( TaskHandle_t xTaskToQuery ) \/*lint !e971 Unqualified char types are allowed for strings and single characters only. *\/$/;"	f
@@ -987,12 +1026,14 @@ pdPASS	FreeRTOS/include/projdefs.h	89;"	d
 pdTASK_CODE	FreeRTOS/include/FreeRTOS.h	847;"	d
 pdTASK_HOOK_CODE	FreeRTOS/include/FreeRTOS.h	837;"	d
 pdTRUE	FreeRTOS/include/projdefs.h	87;"	d
+portAIRCR_REG	FreeRTOS/portable/GCC/ARM_CM3/port.c	104;"	d	file:
 portASSERT_IF_INTERRUPT_PRIORITY_INVALID	FreeRTOS/include/FreeRTOS.h	740;"	d
+portASSERT_IF_INTERRUPT_PRIORITY_INVALID	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	176;"	d
 portASSERT_IF_IN_ISR	FreeRTOS/include/FreeRTOS.h	756;"	d
 portBASE_TYPE	FreeRTOS/include/portmacro.h	95;"	d
-portBASE_TYPE	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	95;"	d
+portBASE_TYPE	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	91;"	d
 portBYTE_ALIGNMENT	FreeRTOS/include/portmacro.h	117;"	d
-portBYTE_ALIGNMENT	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	117;"	d
+portBYTE_ALIGNMENT	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	105;"	d
 portBYTE_ALIGNMENT_MASK	FreeRTOS/include/portable.h	102;"	d
 portBYTE_ALIGNMENT_MASK	FreeRTOS/include/portable.h	106;"	d
 portBYTE_ALIGNMENT_MASK	FreeRTOS/include/portable.h	110;"	d
@@ -1000,78 +1041,91 @@ portBYTE_ALIGNMENT_MASK	FreeRTOS/include/portable.h	114;"	d
 portBYTE_ALIGNMENT_MASK	FreeRTOS/include/portable.h	118;"	d
 portBYTE_ALIGNMENT_MASK	FreeRTOS/include/portable.h	98;"	d
 portCHAR	FreeRTOS/include/portmacro.h	89;"	d
-portCHAR	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	89;"	d
+portCHAR	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	85;"	d
 portCLEAN_UP_TCB	FreeRTOS/include/FreeRTOS.h	308;"	d
 portCLEAR_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/FreeRTOS.h	304;"	d
 portCLEAR_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/portmacro.h	138;"	d
-portCLEAR_INTERRUPT_MASK_FROM_ISR	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	138;"	d
+portCLEAR_INTERRUPT_MASK_FROM_ISR	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	124;"	d
 portCONFIGURE_TIMER_FOR_RUN_TIME_STATS	FreeRTOS/include/FreeRTOS.h	680;"	d
 portCRITICAL_NESTING_IN_TCB	FreeRTOS/include/FreeRTOS.h	260;"	d
 portDISABLE_INTERRUPTS	FreeRTOS/include/portmacro.h	139;"	d
-portDISABLE_INTERRUPTS	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	139;"	d
+portDISABLE_INTERRUPTS	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	125;"	d
 portDOUBLE	FreeRTOS/include/portmacro.h	91;"	d
-portDOUBLE	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	91;"	d
+portDOUBLE	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	87;"	d
 portENABLE_INTERRUPTS	FreeRTOS/include/portmacro.h	140;"	d
-portENABLE_INTERRUPTS	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	140;"	d
+portENABLE_INTERRUPTS	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	126;"	d
 portEND_SWITCHING_ISR	FreeRTOS/include/portmacro.h	126;"	d
-portEND_SWITCHING_ISR	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	126;"	d
+portEND_SWITCHING_ISR	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	114;"	d
 portENTER_CRITICAL	FreeRTOS/include/portmacro.h	141;"	d
-portENTER_CRITICAL	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	141;"	d
+portENTER_CRITICAL	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	127;"	d
 portEXIT_CRITICAL	FreeRTOS/include/portmacro.h	142;"	d
-portEXIT_CRITICAL	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	142;"	d
+portEXIT_CRITICAL	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	128;"	d
+portFIRST_USER_INTERRUPT_NUMBER	FreeRTOS/portable/GCC/ARM_CM3/port.c	102;"	d	file:
 portFLOAT	FreeRTOS/include/portmacro.h	90;"	d
-portFLOAT	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	90;"	d
-portINITIAL_XPSR	FreeRTOS/portable/GCC/ARM_CM0/port.c	92;"	d	file:
+portFLOAT	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	86;"	d
+portGET_HIGHEST_PRIORITY	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	168;"	d
+portINITIAL_XPSR	FreeRTOS/portable/GCC/ARM_CM3/port.c	112;"	d	file:
 portLONG	FreeRTOS/include/portmacro.h	92;"	d
-portLONG	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	92;"	d
+portLONG	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	88;"	d
+portMAX_24_BIT_NUMBER	FreeRTOS/portable/GCC/ARM_CM3/port.c	115;"	d	file:
+portMAX_8_BIT_VALUE	FreeRTOS/portable/GCC/ARM_CM3/port.c	105;"	d	file:
 portMAX_DELAY	FreeRTOS/include/portmacro.h	103;"	d
 portMAX_DELAY	FreeRTOS/include/portmacro.h	106;"	d
-portMAX_DELAY	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	103;"	d
-portMAX_DELAY	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	106;"	d
-portMIN_INTERRUPT_PRIORITY	FreeRTOS/portable/GCC/ARM_CM0/port.c	87;"	d	file:
+portMAX_DELAY	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	95;"	d
+portMAX_DELAY	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	98;"	d
+portMAX_PRIGROUP_BITS	FreeRTOS/portable/GCC/ARM_CM3/port.c	107;"	d	file:
+portMISSED_COUNTS_FACTOR	FreeRTOS/portable/GCC/ARM_CM3/port.c	120;"	d	file:
 portNOP	FreeRTOS/include/portmacro.h	150;"	d
-portNOP	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	150;"	d
+portNOP	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	180;"	d
 portNUM_CONFIGURABLE_REGIONS	FreeRTOS/include/portable.h	126;"	d
-portNVIC_INT_CTRL	FreeRTOS/portable/GCC/ARM_CM0/port.c	81;"	d	file:
 portNVIC_INT_CTRL_REG	FreeRTOS/include/portmacro.h	123;"	d
-portNVIC_INT_CTRL_REG	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	123;"	d
-portNVIC_PENDSVSET	FreeRTOS/portable/GCC/ARM_CM0/port.c	86;"	d	file:
+portNVIC_INT_CTRL_REG	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	111;"	d
+portNVIC_IP_REGISTERS_OFFSET_16	FreeRTOS/portable/GCC/ARM_CM3/port.c	103;"	d	file:
+portNVIC_PENDSVCLEAR_BIT	FreeRTOS/portable/GCC/ARM_CM3/port.c	95;"	d	file:
 portNVIC_PENDSVSET_BIT	FreeRTOS/include/portmacro.h	124;"	d
-portNVIC_PENDSVSET_BIT	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	124;"	d
-portNVIC_PENDSV_PRI	FreeRTOS/portable/GCC/ARM_CM0/port.c	88;"	d	file:
-portNVIC_SYSPRI2	FreeRTOS/portable/GCC/ARM_CM0/port.c	82;"	d	file:
-portNVIC_SYSTICK_CLK	FreeRTOS/portable/GCC/ARM_CM0/port.c	83;"	d	file:
-portNVIC_SYSTICK_CTRL	FreeRTOS/portable/GCC/ARM_CM0/port.c	79;"	d	file:
-portNVIC_SYSTICK_ENABLE	FreeRTOS/portable/GCC/ARM_CM0/port.c	85;"	d	file:
-portNVIC_SYSTICK_INT	FreeRTOS/portable/GCC/ARM_CM0/port.c	84;"	d	file:
-portNVIC_SYSTICK_LOAD	FreeRTOS/portable/GCC/ARM_CM0/port.c	80;"	d	file:
-portNVIC_SYSTICK_PRI	FreeRTOS/portable/GCC/ARM_CM0/port.c	89;"	d	file:
+portNVIC_PENDSVSET_BIT	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	112;"	d
+portNVIC_PENDSV_PRI	FreeRTOS/portable/GCC/ARM_CM3/port.c	98;"	d	file:
+portNVIC_PEND_SYSTICK_CLEAR_BIT	FreeRTOS/portable/GCC/ARM_CM3/port.c	96;"	d	file:
+portNVIC_SYSPRI2_REG	FreeRTOS/portable/GCC/ARM_CM3/port.c	89;"	d	file:
+portNVIC_SYSTICK_CLK_BIT	FreeRTOS/portable/GCC/ARM_CM3/port.c	91;"	d	file:
+portNVIC_SYSTICK_COUNT_FLAG_BIT	FreeRTOS/portable/GCC/ARM_CM3/port.c	94;"	d	file:
+portNVIC_SYSTICK_CTRL_REG	FreeRTOS/portable/GCC/ARM_CM3/port.c	86;"	d	file:
+portNVIC_SYSTICK_CURRENT_VALUE_REG	FreeRTOS/portable/GCC/ARM_CM3/port.c	88;"	d	file:
+portNVIC_SYSTICK_ENABLE_BIT	FreeRTOS/portable/GCC/ARM_CM3/port.c	93;"	d	file:
+portNVIC_SYSTICK_INT_BIT	FreeRTOS/portable/GCC/ARM_CM3/port.c	92;"	d	file:
+portNVIC_SYSTICK_LOAD_REG	FreeRTOS/portable/GCC/ARM_CM3/port.c	87;"	d	file:
+portNVIC_SYSTICK_PRI	FreeRTOS/portable/GCC/ARM_CM3/port.c	99;"	d	file:
 portPOINTER_SIZE_TYPE	FreeRTOS/include/FreeRTOS.h	330;"	d
 portPRE_TASK_DELETE_HOOK	FreeRTOS/include/FreeRTOS.h	312;"	d
+portPRIGROUP_SHIFT	FreeRTOS/portable/GCC/ARM_CM3/port.c	109;"	d	file:
+portPRIORITY_GROUP_MASK	FreeRTOS/portable/GCC/ARM_CM3/port.c	108;"	d	file:
 portPRIVILEGE_BIT	FreeRTOS/include/FreeRTOS.h	688;"	d
+portRECORD_READY_PRIORITY	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	163;"	d
+portRESET_READY_PRIORITY	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	164;"	d
 portRESET_READY_PRIORITY	FreeRTOS/tasks.c	197;"	d	file:
 portSETUP_TCB	FreeRTOS/include/FreeRTOS.h	316;"	d
 portSET_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/FreeRTOS.h	300;"	d
 portSET_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/portmacro.h	137;"	d
-portSET_INTERRUPT_MASK_FROM_ISR	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	137;"	d
+portSET_INTERRUPT_MASK_FROM_ISR	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	123;"	d
 portSHORT	FreeRTOS/include/portmacro.h	93;"	d
-portSHORT	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	93;"	d
+portSHORT	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	89;"	d
 portSTACK_GROWTH	FreeRTOS/include/portmacro.h	115;"	d
-portSTACK_GROWTH	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	115;"	d
+portSTACK_GROWTH	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	103;"	d
 portSTACK_TYPE	FreeRTOS/include/portmacro.h	94;"	d
-portSTACK_TYPE	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	94;"	d
+portSTACK_TYPE	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	90;"	d
 portSUPPRESS_TICKS_AND_SLEEP	FreeRTOS/include/FreeRTOS.h	696;"	d
+portSUPPRESS_TICKS_AND_SLEEP	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	141;"	d
 portTASK_FUNCTION	FreeRTOS/include/portmacro.h	148;"	d
-portTASK_FUNCTION	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	148;"	d
+portTASK_FUNCTION	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	135;"	d
 portTASK_FUNCTION	FreeRTOS/tasks.c	/^static portTASK_FUNCTION( prvIdleTask, pvParameters )$/;"	f	file:
 portTASK_FUNCTION_PROTO	FreeRTOS/include/portmacro.h	147;"	d
-portTASK_FUNCTION_PROTO	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	147;"	d
-portTASK_RETURN_ADDRESS	FreeRTOS/portable/GCC/ARM_CM0/port.c	100;"	d	file:
-portTASK_RETURN_ADDRESS	FreeRTOS/portable/GCC/ARM_CM0/port.c	98;"	d	file:
+portTASK_FUNCTION_PROTO	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	134;"	d
+portTASK_RETURN_ADDRESS	FreeRTOS/portable/GCC/ARM_CM3/port.c	126;"	d	file:
+portTASK_RETURN_ADDRESS	FreeRTOS/portable/GCC/ARM_CM3/port.c	128;"	d	file:
 portTASK_USES_FLOATING_POINT	FreeRTOS/include/FreeRTOS.h	724;"	d
 portTICK_PERIOD_MS	FreeRTOS/include/portmacro.h	116;"	d
-portTICK_PERIOD_MS	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	116;"	d
 portTICK_RATE_MS	FreeRTOS/include/FreeRTOS.h	838;"	d
+portTICK_RATE_MS	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	104;"	d
 portTICK_TYPE_CLEAR_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/FreeRTOS.h	807;"	d
 portTICK_TYPE_CLEAR_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/FreeRTOS.h	814;"	d
 portTICK_TYPE_ENTER_CRITICAL	FreeRTOS/include/FreeRTOS.h	804;"	d
@@ -1080,15 +1134,17 @@ portTICK_TYPE_EXIT_CRITICAL	FreeRTOS/include/FreeRTOS.h	805;"	d
 portTICK_TYPE_EXIT_CRITICAL	FreeRTOS/include/FreeRTOS.h	812;"	d
 portTICK_TYPE_IS_ATOMIC	FreeRTOS/include/FreeRTOS.h	772;"	d
 portTICK_TYPE_IS_ATOMIC	FreeRTOS/include/portmacro.h	110;"	d
-portTICK_TYPE_IS_ATOMIC	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	110;"	d
 portTICK_TYPE_SET_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/FreeRTOS.h	806;"	d
 portTICK_TYPE_SET_INTERRUPT_MASK_FROM_ISR	FreeRTOS/include/FreeRTOS.h	813;"	d
+portTOP_BIT_OF_BYTE	FreeRTOS/portable/GCC/ARM_CM3/port.c	106;"	d	file:
 portTickType	FreeRTOS/include/FreeRTOS.h	825;"	d
+portTickType	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	/^	typedef unsigned portLONG portTickType;$/;"	t
+portTickType	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	/^	typedef unsigned portSHORT portTickType;$/;"	t
 portUSING_MPU_WRAPPERS	FreeRTOS/include/mpu_wrappers.h	195;"	d
 portYIELD	FreeRTOS/include/portmacro.h	125;"	d
-portYIELD	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	125;"	d
+portYIELD	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	113;"	d
 portYIELD_FROM_ISR	FreeRTOS/include/portmacro.h	127;"	d
-portYIELD_FROM_ISR	FreeRTOS/portable/GCC/ARM_CM0/portmacro.h	127;"	d
+portYIELD_FROM_ISR	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	115;"	d
 portYIELD_WITHIN_API	FreeRTOS/include/FreeRTOS.h	692;"	d
 prettyPrintTo	ArduinoJson/Serialization/JsonPrintable.hpp	/^  prettyPrintTo(Print &print) const {$/;"	f	class:ArduinoJson::Internals::JsonPrintable
 prettyPrintTo	ArduinoJson/Serialization/JsonPrintable.hpp	/^  prettyPrintTo(TString &str) const {$/;"	f	class:ArduinoJson::Internals::JsonPrintable
@@ -1114,11 +1170,10 @@ printTo	ArduinoJson/Serialization/JsonPrintable.hpp	/^  size_t printTo(char *buf
 printTo	ArduinoJson/Serialization/JsonPrintable.hpp	/^  std::ostream &printTo(std::ostream &os) const {$/;"	f	class:ArduinoJson::Internals::JsonPrintable
 print_char	src/test.c	/^void print_char() {$/;"	f
 print_char	test.c	/^void print_char() {$/;"	f
-print_int	src/test.c	/^void print_int() {$/;"	f
 print_int	test.c	/^void print_int() {$/;"	f
-print_uart0	src/test.c	/^void print_uart0(const char *s) {$/;"	f
 print_uart0	test.c	/^void print_uart0(const char *s) {$/;"	f
 print_uart0	test.cpp	/^void print_uart0(const char *s) {$/;"	f
+printi	src/test.c	/^void printi() {$/;"	f
 prvAddCoRoutineToReadyQueue	FreeRTOS/croutine.c	109;"	d	file:
 prvAddCurrentTaskToDelayedList	FreeRTOS/tasks.c	/^static void prvAddCurrentTaskToDelayedList( TickType_t xTicksToWait, const BaseType_t xCanBlockIndefinitely )$/;"	f	file:
 prvAddNewTaskToReadyList	FreeRTOS/tasks.c	/^static void prvAddNewTaskToReadyList( TCB_t *pxNewTCB )$/;"	f	file:
@@ -1150,16 +1205,16 @@ prvIsQueueFull	FreeRTOS/queue.c	/^static BaseType_t prvIsQueueFull( const Queue_
 prvListTasksWithinSingleList	FreeRTOS/tasks.c	/^	static UBaseType_t prvListTasksWithinSingleList( TaskStatus_t *pxTaskStatusArray, List_t *pxList, eTaskState eState )$/;"	f	file:
 prvLockQueue	FreeRTOS/queue.c	264;"	d	file:
 prvNotifyQueueSetContainer	FreeRTOS/queue.c	/^	static BaseType_t prvNotifyQueueSetContainer( const Queue_t * const pxQueue, const BaseType_t xCopyPosition )$/;"	f	file:
+prvPortStartFirstTask	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^static void prvPortStartFirstTask( void )$/;"	f	file:
 prvProcessExpiredTimer	FreeRTOS/timers.c	/^static void prvProcessExpiredTimer( const TickType_t xNextExpireTime, const TickType_t xTimeNow )$/;"	f	file:
 prvProcessReceivedCommands	FreeRTOS/timers.c	/^static void	prvProcessReceivedCommands( void )$/;"	f	file:
 prvProcessTimerOrBlockTask	FreeRTOS/timers.c	/^static void prvProcessTimerOrBlockTask( const TickType_t xNextExpireTime, BaseType_t xListWasEmpty )$/;"	f	file:
 prvResetNextTaskUnblockTime	FreeRTOS/tasks.c	/^static void prvResetNextTaskUnblockTime( void )$/;"	f	file:
 prvSampleTimeNow	FreeRTOS/timers.c	/^static TickType_t prvSampleTimeNow( BaseType_t * const pxTimerListsWereSwitched )$/;"	f	file:
 prvSearchForNameWithinSingleList	FreeRTOS/tasks.c	/^	static TCB_t *prvSearchForNameWithinSingleList( List_t *pxList, const char pcNameToQuery[] )$/;"	f	file:
-prvSetupTimerInterrupt	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void prvSetupTimerInterrupt( void )$/;"	f
 prvSwitchTimerLists	FreeRTOS/timers.c	/^static void prvSwitchTimerLists( void )$/;"	f	file:
 prvTaskCheckFreeStackSpace	FreeRTOS/tasks.c	/^	static uint16_t prvTaskCheckFreeStackSpace( const uint8_t * pucStackByte )$/;"	f	file:
-prvTaskExitError	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^static void prvTaskExitError( void )$/;"	f	file:
+prvTaskExitError	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^static void prvTaskExitError( void )$/;"	f	file:
 prvTaskIsTaskSuspended	FreeRTOS/tasks.c	/^	static BaseType_t prvTaskIsTaskSuspended( const TaskHandle_t xTask )$/;"	f	file:
 prvTestWaitCondition	FreeRTOS/event_groups.c	/^static BaseType_t prvTestWaitCondition( const EventBits_t uxCurrentEventBits, const EventBits_t uxBitsToWaitFor, const BaseType_t xWaitForAllBits )$/;"	f	file:
 prvTimerTask	FreeRTOS/timers.c	/^static void prvTimerTask( void *pvParameters )$/;"	f	file:
@@ -1172,7 +1227,7 @@ pvContainer	FreeRTOS/include/list.h	/^	void * configLIST_VOLATILE pvContainer;		
 pvDummy1	FreeRTOS/include/FreeRTOS.h	/^	void				*pvDummy1;$/;"	m	struct:xSTATIC_TIMER
 pvDummy1	FreeRTOS/include/FreeRTOS.h	/^	void *pvDummy1[ 3 ];$/;"	m	struct:xSTATIC_QUEUE
 pvDummy15	FreeRTOS/include/FreeRTOS.h	/^		void			*pvDummy15[ configNUM_THREAD_LOCAL_STORAGE_POINTERS ];$/;"	m	struct:xSTATIC_TCB
-pvDummy2	FreeRTOS/include/FreeRTOS.h	/^		void *pvDummy2;$/;"	m	union:xSTATIC_QUEUE::__anon3
+pvDummy2	FreeRTOS/include/FreeRTOS.h	/^		void *pvDummy2;$/;"	m	union:xSTATIC_QUEUE::__anon4
 pvDummy2	FreeRTOS/include/FreeRTOS.h	/^	void *pvDummy2;$/;"	m	struct:xSTATIC_LIST
 pvDummy2	FreeRTOS/include/FreeRTOS.h	/^	void *pvDummy2[ 2 ];$/;"	m	struct:xSTATIC_MINI_LIST_ITEM
 pvDummy2	FreeRTOS/include/FreeRTOS.h	/^	void *pvDummy2[ 4 ];$/;"	m	struct:xSTATIC_LIST_ITEM
@@ -1221,7 +1276,7 @@ pxNextFreeBlock	FreeRTOS/portable/MemMang/heap_5.c	/^	struct A_BLOCK_LINK *pxNex
 pxOverflowDelayedCoRoutineList	FreeRTOS/croutine.c	/^static List_t * pxOverflowDelayedCoRoutineList;							\/*< Points to the delayed co-routine list currently being used to hold co-routines that have overflowed the current tick count. *\/$/;"	v	file:
 pxOverflowDelayedTaskList	FreeRTOS/tasks.c	/^PRIVILEGED_DATA static List_t * volatile pxOverflowDelayedTaskList;		\/*< Points to the delayed task list currently being used to hold tasks that have overflowed the current tick count. *\/$/;"	v	file:
 pxOverflowTimerList	FreeRTOS/timers.c	/^PRIVILEGED_DATA static List_t *pxOverflowTimerList;$/;"	v	file:
-pxPortInitialiseStack	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters )$/;"	f
+pxPortInitialiseStack	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^portSTACK_TYPE *pxPortInitialiseStack( portSTACK_TYPE *pxTopOfStack, pdTASK_CODE pxCode, void *pvParameters )$/;"	f
 pxPrevious	FreeRTOS/include/list.h	/^	struct xLIST_ITEM * configLIST_VOLATILE pxPrevious;	\/*< Pointer to the previous ListItem_t in the list. *\/$/;"	m	struct:xLIST_ITEM	typeref:struct:xLIST_ITEM::configLIST_VOLATILE
 pxPrevious	FreeRTOS/include/list.h	/^	struct xLIST_ITEM * configLIST_VOLATILE pxPrevious;$/;"	m	struct:xMINI_LIST_ITEM	typeref:struct:xMINI_LIST_ITEM::configLIST_VOLATILE
 pxQueueSetContainer	FreeRTOS/queue.c	/^		struct QueueDefinition *pxQueueSetContainer;$/;"	m	struct:QueueDefinition	typeref:struct:QueueDefinition::QueueDefinition	file:
@@ -1450,9 +1505,9 @@ type	ArduinoJson/Data/JsonVariantAs.hpp	/^  typedef const char* type;$/;"	t	stru
 type	ArduinoJson/TypeTraits/EnableIf.hpp	/^  typedef T type;$/;"	t	struct:ArduinoJson::TypeTraits::EnableIf
 type	ArduinoJson/TypeTraits/RemoveConst.hpp	/^  typedef T type;$/;"	t	struct:ArduinoJson::TypeTraits::RemoveConst
 type	ArduinoJson/TypeTraits/RemoveReference.hpp	/^  typedef T type;$/;"	t	struct:ArduinoJson::TypeTraits::RemoveReference
-u	FreeRTOS/include/FreeRTOS.h	/^	} u;$/;"	m	struct:xSTATIC_QUEUE	typeref:union:xSTATIC_QUEUE::__anon3
-u	FreeRTOS/queue.c	/^	} u;$/;"	m	struct:QueueDefinition	typeref:union:QueueDefinition::__anon2	file:
-u	FreeRTOS/timers.c	/^	} u;$/;"	m	struct:tmrTimerQueueMessage	typeref:union:tmrTimerQueueMessage::__anon7	file:
+u	FreeRTOS/include/FreeRTOS.h	/^	} u;$/;"	m	struct:xSTATIC_QUEUE	typeref:union:xSTATIC_QUEUE::__anon4
+u	FreeRTOS/queue.c	/^	} u;$/;"	m	struct:QueueDefinition	typeref:union:QueueDefinition::__anon3	file:
+u	FreeRTOS/timers.c	/^	} u;$/;"	m	struct:tmrTimerQueueMessage	typeref:union:tmrTimerQueueMessage::__anon8	file:
 ucDelayAborted	FreeRTOS/tasks.c	/^		uint8_t ucDelayAborted;$/;"	m	struct:tskTaskControlBlock	file:
 ucDummy19	FreeRTOS/include/FreeRTOS.h	/^		uint8_t 		ucDummy19;$/;"	m	struct:xSTATIC_TCB
 ucDummy4	FreeRTOS/include/FreeRTOS.h	/^			uint8_t ucDummy4;$/;"	m	struct:xSTATIC_EVENT_GROUP
@@ -1464,7 +1519,9 @@ ucDummy9	FreeRTOS/include/FreeRTOS.h	/^		uint8_t ucDummy9;$/;"	m	struct:xSTATIC_
 ucHeap	FreeRTOS/portable/MemMang/heap_1.c	/^	static uint8_t ucHeap[ configTOTAL_HEAP_SIZE ];$/;"	v	file:
 ucHeap	FreeRTOS/portable/MemMang/heap_2.c	/^	static uint8_t ucHeap[ configTOTAL_HEAP_SIZE ];$/;"	v	file:
 ucHeap	FreeRTOS/portable/MemMang/heap_4.c	/^	static uint8_t ucHeap[ configTOTAL_HEAP_SIZE ];$/;"	v	file:
+ucMaxSysCallPriority	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	 static unsigned char ucMaxSysCallPriority = 0;$/;"	v	file:
 ucNotifyState	FreeRTOS/tasks.c	/^		volatile uint8_t ucNotifyState;$/;"	m	struct:tskTaskControlBlock	file:
+ucPortCountLeadingZeros	FreeRTOS/portable/GCC/ARM_CM3/portmacro.h	/^	__attribute__( ( always_inline ) ) static inline unsigned char ucPortCountLeadingZeros( unsigned long ulBitmap )$/;"	f
 ucQueueGetQueueType	FreeRTOS/queue.c	/^	uint8_t ucQueueGetQueueType( QueueHandle_t xQueue )$/;"	f
 ucQueueType	FreeRTOS/queue.c	/^		uint8_t ucQueueType;$/;"	m	struct:QueueDefinition	file:
 ucStaticallyAllocated	FreeRTOS/event_groups.c	/^		uint8_t ucStaticallyAllocated; \/*< Set to pdTRUE if the event group is statically allocated to ensure no attempt is made to free the memory. *\/$/;"	m	struct:xEventGroupDefinition	file:
@@ -1474,15 +1531,18 @@ ucStaticallyAllocated	FreeRTOS/timers.c	/^		uint8_t 			ucStaticallyAllocated; \/
 ulDummy16	FreeRTOS/include/FreeRTOS.h	/^		uint32_t		ulDummy16;$/;"	m	struct:xSTATIC_TCB
 ulDummy18	FreeRTOS/include/FreeRTOS.h	/^		uint32_t 		ulDummy18;$/;"	m	struct:xSTATIC_TCB
 ulLengthInBytes	FreeRTOS/include/task.h	/^	uint32_t ulLengthInBytes;$/;"	m	struct:xMEMORY_REGION
+ulMaxPRIGROUPValue	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	 static unsigned long ulMaxPRIGROUPValue = 0;$/;"	v	file:
 ulNotifiedValue	FreeRTOS/tasks.c	/^		volatile uint32_t ulNotifiedValue;$/;"	m	struct:tskTaskControlBlock	file:
 ulParameter2	FreeRTOS/timers.c	/^	uint32_t ulParameter2;					\/* << The value that will be used as the callback functions second parameter. *\/$/;"	m	struct:tmrCallbackParameters	file:
 ulParameters	FreeRTOS/include/task.h	/^	uint32_t ulParameters;$/;"	m	struct:xMEMORY_REGION
+ulPortSetInterruptMask	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^__attribute__(( naked )) unsigned long ulPortSetInterruptMask( void )$/;"	f
 ulRunTimeCounter	FreeRTOS/include/task.h	/^	uint32_t ulRunTimeCounter;		\/* The total run time allocated to the task so far, as defined by the run time stats clock.  See http:\/\/www.freertos.org\/rtos-run-time-stats.html.  Only valid when configGENERATE_RUN_TIME_STATS is defined as 1 in FreeRTOSConfig.h. *\/$/;"	m	struct:xTASK_STATUS
 ulRunTimeCounter	FreeRTOS/tasks.c	/^		uint32_t		ulRunTimeCounter;	\/*< Stores the amount of time the task has spent in the Running state. *\/$/;"	m	struct:tskTaskControlBlock	file:
-ulSetInterruptMaskFromISR	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^uint32_t ulSetInterruptMaskFromISR( void )$/;"	f
+ulStoppedTimerCompensation	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	static unsigned long ulStoppedTimerCompensation = 0;$/;"	v	file:
 ulTaskNotifyTake	FreeRTOS/include/mpu_wrappers.h	123;"	d
 ulTaskNotifyTake	FreeRTOS/tasks.c	/^	uint32_t ulTaskNotifyTake( BaseType_t xClearCountOnExit, TickType_t xTicksToWait )$/;"	f
 ulTaskSwitchedInTime	FreeRTOS/tasks.c	/^	PRIVILEGED_DATA static uint32_t ulTaskSwitchedInTime = 0UL;	\/*< Holds the value of a timer\/counter the last time a task was switched in. *\/$/;"	v	file:
+ulTimerCountsForOneTick	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	static unsigned long ulTimerCountsForOneTick = 0;$/;"	v	file:
 ulTotalRunTime	FreeRTOS/tasks.c	/^	PRIVILEGED_DATA static uint32_t ulTotalRunTime = 0UL;		\/*< Holds the total amount of execution time as defined by the run time counter clock. *\/$/;"	v	file:
 unescapeChar	ArduinoJson/Data/Encoding.hpp	/^  static char unescapeChar(char c) {$/;"	f	class:ArduinoJson::Internals::Encoding
 unindent	ArduinoJson/Serialization/IndentedPrint.hpp	/^  void unindent() {$/;"	f	class:ArduinoJson::Internals::IndentedPrint
@@ -1492,7 +1552,7 @@ usStackHighWaterMark	FreeRTOS/include/task.h	/^	uint16_t usStackHighWaterMark;	\
 uxAutoReload	FreeRTOS/timers.c	/^	UBaseType_t				uxAutoReload;		\/*<< Set to pdTRUE if the timer should be automatically restarted once expired.  Set to pdFALSE if the timer is, in effect, a one-shot timer. *\/$/;"	m	struct:tmrTimerControl	file:
 uxBasePriority	FreeRTOS/include/task.h	/^	UBaseType_t uxBasePriority;		\/* The priority to which the task will return if the task's current priority has been inherited to avoid unbounded priority inversion when obtaining a mutex.  Only valid if configUSE_MUTEXES is defined as 1 in FreeRTOSConfig.h. *\/$/;"	m	struct:xTASK_STATUS
 uxBasePriority	FreeRTOS/tasks.c	/^		UBaseType_t		uxBasePriority;		\/*< The priority last assigned to the task - used by the priority inheritance mechanism. *\/$/;"	m	struct:tskTaskControlBlock	file:
-uxCriticalNesting	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^static UBaseType_t uxCriticalNesting = 0xaaaaaaaa;$/;"	v	file:
+uxCriticalNesting	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^static unsigned portBASE_TYPE uxCriticalNesting = 0xaaaaaaaa;$/;"	v	file:
 uxCriticalNesting	FreeRTOS/tasks.c	/^		UBaseType_t		uxCriticalNesting;	\/*< Holds the critical section nesting depth for ports that do not maintain their own count in the port layer. *\/$/;"	m	struct:tskTaskControlBlock	file:
 uxCurrentNumberOfTasks	FreeRTOS/tasks.c	/^PRIVILEGED_DATA static volatile UBaseType_t uxCurrentNumberOfTasks 	= ( UBaseType_t ) 0U;$/;"	v	file:
 uxCurrentPriority	FreeRTOS/include/task.h	/^	UBaseType_t uxCurrentPriority;	\/* The priority at which the task was running (may be inherited) when the structure was populated. *\/$/;"	m	struct:xTASK_STATUS
@@ -1500,7 +1560,7 @@ uxDeletedTasksWaitingCleanUp	FreeRTOS/tasks.c	/^	PRIVILEGED_DATA static volatile
 uxDummy1	FreeRTOS/include/FreeRTOS.h	/^	UBaseType_t uxDummy1;$/;"	m	struct:xSTATIC_LIST
 uxDummy10	FreeRTOS/include/FreeRTOS.h	/^		UBaseType_t		uxDummy10[ 2 ];$/;"	m	struct:xSTATIC_TCB
 uxDummy12	FreeRTOS/include/FreeRTOS.h	/^		UBaseType_t		uxDummy12[ 2 ];$/;"	m	struct:xSTATIC_TCB
-uxDummy2	FreeRTOS/include/FreeRTOS.h	/^		UBaseType_t uxDummy2;$/;"	m	union:xSTATIC_QUEUE::__anon3
+uxDummy2	FreeRTOS/include/FreeRTOS.h	/^		UBaseType_t uxDummy2;$/;"	m	union:xSTATIC_QUEUE::__anon4
 uxDummy20	FreeRTOS/include/FreeRTOS.h	/^		uint8_t			uxDummy20;$/;"	m	struct:xSTATIC_TCB
 uxDummy3	FreeRTOS/include/FreeRTOS.h	/^		UBaseType_t uxDummy3;$/;"	m	struct:xSTATIC_EVENT_GROUP
 uxDummy4	FreeRTOS/include/FreeRTOS.h	/^	UBaseType_t			uxDummy4;$/;"	m	struct:xSTATIC_TIMER
@@ -1531,7 +1591,7 @@ uxQueueNumber	FreeRTOS/queue.c	/^		UBaseType_t uxQueueNumber;$/;"	m	struct:Queue
 uxQueueSpacesAvailable	FreeRTOS/include/mpu_wrappers.h	135;"	d
 uxQueueSpacesAvailable	FreeRTOS/queue.c	/^UBaseType_t uxQueueSpacesAvailable( const QueueHandle_t xQueue )$/;"	f
 uxQueueType	FreeRTOS/queue.c	109;"	d	file:
-uxRecursiveCallCount	FreeRTOS/queue.c	/^		UBaseType_t uxRecursiveCallCount;\/*< Maintains a count of the number of times a recursive mutex has been recursively 'taken' when the structure is used as a mutex. *\/$/;"	m	union:QueueDefinition::__anon2	file:
+uxRecursiveCallCount	FreeRTOS/queue.c	/^		UBaseType_t uxRecursiveCallCount;\/*< Maintains a count of the number of times a recursive mutex has been recursively 'taken' when the structure is used as a mutex. *\/$/;"	m	union:QueueDefinition::__anon3	file:
 uxSchedulerSuspended	FreeRTOS/tasks.c	/^PRIVILEGED_DATA static volatile UBaseType_t uxSchedulerSuspended	= ( UBaseType_t ) pdFALSE;$/;"	v	file:
 uxSemaphoreGetCount	FreeRTOS/include/semphr.h	1167;"	d
 uxState	FreeRTOS/include/croutine.h	/^	uint16_t 			uxState;			\/*< Used internally by the co-routine implementation. *\/$/;"	m	struct:corCoRoutineControlBlock
@@ -1552,7 +1612,6 @@ uxTaskResetEventItemValue	FreeRTOS/tasks.c	/^TickType_t uxTaskResetEventItemValu
 uxTimerNumber	FreeRTOS/timers.c	/^		UBaseType_t			uxTimerNumber;		\/*<< An ID assigned by trace tools such as FreeRTOS+Trace *\/$/;"	m	struct:tmrTimerControl	file:
 uxTopCoRoutineReadyPriority	FreeRTOS/croutine.c	/^static UBaseType_t uxTopCoRoutineReadyPriority = 0;$/;"	v	file:
 uxTopReadyPriority	FreeRTOS/tasks.c	/^PRIVILEGED_DATA static volatile UBaseType_t uxTopReadyPriority 		= tskIDLE_PRIORITY;$/;"	v	file:
-vClearInterruptMaskFromISR	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vClearInterruptMaskFromISR( uint32_t ulMask )$/;"	f
 vCoRoutineAddToDelayedList	FreeRTOS/croutine.c	/^void vCoRoutineAddToDelayedList( TickType_t xTicksToDelay, List_t *pxEventList )$/;"	f
 vCoRoutineSchedule	FreeRTOS/croutine.c	/^void vCoRoutineSchedule( void )$/;"	f
 vEventGroupClearBitsCallback	FreeRTOS/event_groups.c	/^void vEventGroupClearBitsCallback( void *pvEventGroup, const uint32_t ulBitsToClear )$/;"	f
@@ -1563,10 +1622,11 @@ vListInitialise	FreeRTOS/list.c	/^void vListInitialise( List_t * const pxList )$
 vListInitialiseItem	FreeRTOS/list.c	/^void vListInitialiseItem( ListItem_t * const pxItem )$/;"	f
 vListInsert	FreeRTOS/list.c	/^void vListInsert( List_t * const pxList, ListItem_t * const pxNewListItem )$/;"	f
 vListInsertEnd	FreeRTOS/list.c	/^void vListInsertEnd( List_t * const pxList, ListItem_t * const pxNewListItem )$/;"	f
+vPortClearInterruptMask	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^__attribute__(( naked )) void vPortClearInterruptMask( unsigned long ulNewMaskValue )$/;"	f
 vPortDefineHeapRegions	FreeRTOS/portable/MemMang/heap_5.c	/^void vPortDefineHeapRegions( const HeapRegion_t * const pxHeapRegions )$/;"	f
-vPortEndScheduler	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vPortEndScheduler( void )$/;"	f
-vPortEnterCritical	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vPortEnterCritical( void )$/;"	f
-vPortExitCritical	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vPortExitCritical( void )$/;"	f
+vPortEndScheduler	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void vPortEndScheduler( void )$/;"	f
+vPortEnterCritical	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void vPortEnterCritical( void )$/;"	f
+vPortExitCritical	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void vPortExitCritical( void )$/;"	f
 vPortFree	FreeRTOS/portable/MemMang/heap_1.c	/^void vPortFree( void *pv )$/;"	f
 vPortFree	FreeRTOS/portable/MemMang/heap_2.c	/^void vPortFree( void *pv )$/;"	f
 vPortFree	FreeRTOS/portable/MemMang/heap_3.c	/^void vPortFree( void *pv )$/;"	f
@@ -1575,10 +1635,13 @@ vPortFree	FreeRTOS/portable/MemMang/heap_5.c	/^void vPortFree( void *pv )$/;"	f
 vPortInitialiseBlocks	FreeRTOS/portable/MemMang/heap_1.c	/^void vPortInitialiseBlocks( void )$/;"	f
 vPortInitialiseBlocks	FreeRTOS/portable/MemMang/heap_2.c	/^void vPortInitialiseBlocks( void )$/;"	f
 vPortInitialiseBlocks	FreeRTOS/portable/MemMang/heap_4.c	/^void vPortInitialiseBlocks( void )$/;"	f
-vPortSVCHandler	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vPortSVCHandler( void )$/;"	f
+vPortSVCHandler	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void vPortSVCHandler( void )$/;"	f
 vPortSVCHandler	src/FreeRTOSConfig.h	145;"	d
-vPortStartFirstTask	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vPortStartFirstTask( void )$/;"	f
-vPortYield	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void vPortYield( void )$/;"	f
+vPortSVCHandler	src/FreeRTOSConfig_m3.h	145;"	d
+vPortSetupTimerInterrupt	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^__attribute__(( weak )) void vPortSetupTimerInterrupt( void )$/;"	f
+vPortSuppressTicksAndSleep	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	__attribute__((weak)) void vPortSuppressTicksAndSleep( portTickType xExpectedIdleTime )$/;"	f
+vPortValidateInterruptPriority	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	void vPortValidateInterruptPriority( void )$/;"	f
+vPortYield	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void vPortYield( void )$/;"	f
 vQueueAddToRegistry	FreeRTOS/include/FreeRTOS.h	324;"	d
 vQueueAddToRegistry	FreeRTOS/include/mpu_wrappers.h	153;"	d
 vQueueAddToRegistry	FreeRTOS/queue.c	/^	void vQueueAddToRegistry( QueueHandle_t xQueue, const char *pcQueueName ) \/*lint !e971 Unqualified char types are allowed for strings and single characters only. *\/$/;"	f
@@ -1685,7 +1748,7 @@ xBlockAllocatedBit	FreeRTOS/portable/MemMang/heap_5.c	/^static size_t xBlockAllo
 xBlockSize	FreeRTOS/portable/MemMang/heap_2.c	/^	size_t xBlockSize;						\/*<< The size of the free block. *\/$/;"	m	struct:A_BLOCK_LINK	file:
 xBlockSize	FreeRTOS/portable/MemMang/heap_4.c	/^	size_t xBlockSize;						\/*<< The size of the free block. *\/$/;"	m	struct:A_BLOCK_LINK	file:
 xBlockSize	FreeRTOS/portable/MemMang/heap_5.c	/^	size_t xBlockSize;						\/*<< The size of the free block. *\/$/;"	m	struct:A_BLOCK_LINK	file:
-xCallbackParameters	FreeRTOS/timers.c	/^			CallbackParameters_t xCallbackParameters;$/;"	m	union:tmrTimerQueueMessage::__anon7	file:
+xCallbackParameters	FreeRTOS/timers.c	/^			CallbackParameters_t xCallbackParameters;$/;"	m	union:tmrTimerQueueMessage::__anon8	file:
 xCoRoutineCreate	FreeRTOS/croutine.c	/^BaseType_t xCoRoutineCreate( crCOROUTINE_CODE pxCoRoutineCode, UBaseType_t uxPriority, UBaseType_t uxIndex )$/;"	f
 xCoRoutineHandle	FreeRTOS/include/FreeRTOS.h	836;"	d
 xCoRoutineRemoveFromEventList	FreeRTOS/croutine.c	/^BaseType_t xCoRoutineRemoveFromEventList( const List_t *pxEventList )$/;"	f
@@ -1747,6 +1810,7 @@ xListItem	FreeRTOS/include/FreeRTOS.h	848;"	d
 xMEMORY_REGION	FreeRTOS/include/task.h	/^typedef struct xMEMORY_REGION$/;"	s
 xMINI_LIST_ITEM	FreeRTOS/include/list.h	/^struct xMINI_LIST_ITEM$/;"	s
 xMPUSettings	FreeRTOS/tasks.c	/^		xMPU_SETTINGS	xMPUSettings;		\/*< The MPU settings are defined as part of the port layer.  THIS MUST BE THE SECOND MEMBER OF THE TCB STRUCT. *\/$/;"	m	struct:tskTaskControlBlock	file:
+xMaximumPossibleSuppressedTicks	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^	static unsigned long xMaximumPossibleSuppressedTicks = 0;$/;"	v	file:
 xMemoryRegion	FreeRTOS/include/FreeRTOS.h	832;"	d
 xMessageID	FreeRTOS/timers.c	/^	BaseType_t			xMessageID;			\/*<< The command being sent to the timer service task. *\/$/;"	m	struct:tmrTimerQueueMessage	file:
 xMessageValue	FreeRTOS/timers.c	/^	TickType_t			xMessageValue;		\/*<< An optional value used by a subset of commands, for example, when changing the period of a timer. *\/$/;"	m	struct:tmrTimerParameters	file:
@@ -1766,11 +1830,13 @@ xPortGetFreeHeapSize	FreeRTOS/portable/MemMang/heap_4.c	/^size_t xPortGetFreeHea
 xPortGetFreeHeapSize	FreeRTOS/portable/MemMang/heap_5.c	/^size_t xPortGetFreeHeapSize( void )$/;"	f
 xPortGetMinimumEverFreeHeapSize	FreeRTOS/portable/MemMang/heap_4.c	/^size_t xPortGetMinimumEverFreeHeapSize( void )$/;"	f
 xPortGetMinimumEverFreeHeapSize	FreeRTOS/portable/MemMang/heap_5.c	/^size_t xPortGetMinimumEverFreeHeapSize( void )$/;"	f
-xPortPendSVHandler	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void xPortPendSVHandler( void )$/;"	f
+xPortPendSVHandler	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void xPortPendSVHandler( void )$/;"	f
 xPortPendSVHandler	src/FreeRTOSConfig.h	146;"	d
-xPortStartScheduler	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^BaseType_t xPortStartScheduler( void )$/;"	f
-xPortSysTickHandler	FreeRTOS/portable/GCC/ARM_CM0/port.c	/^void xPortSysTickHandler( void )$/;"	f
+xPortPendSVHandler	src/FreeRTOSConfig_m3.h	146;"	d
+xPortStartScheduler	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^portBASE_TYPE xPortStartScheduler( void )$/;"	f
+xPortSysTickHandler	FreeRTOS/portable/GCC/ARM_CM3/port.c	/^void xPortSysTickHandler( void )$/;"	f
 xPortSysTickHandler	src/FreeRTOSConfig.h	147;"	d
+xPortSysTickHandler	src/FreeRTOSConfig_m3.h	147;"	d
 xQUEUE	FreeRTOS/queue.c	/^} xQUEUE;$/;"	t	typeref:struct:QueueDefinition	file:
 xQueueAddToSet	FreeRTOS/include/mpu_wrappers.h	147;"	d
 xQueueAddToSet	FreeRTOS/queue.c	/^	BaseType_t xQueueAddToSet( QueueSetMemberHandle_t xQueueOrSemaphore, QueueSetHandle_t xQueueSet )$/;"	f
@@ -1943,7 +2009,7 @@ xTimerHandle	FreeRTOS/include/FreeRTOS.h	835;"	d
 xTimerIsTimerActive	FreeRTOS/include/mpu_wrappers.h	163;"	d
 xTimerIsTimerActive	FreeRTOS/timers.c	/^BaseType_t xTimerIsTimerActive( TimerHandle_t xTimer )$/;"	f
 xTimerListItem	FreeRTOS/timers.c	/^	ListItem_t				xTimerListItem;		\/*<< Standard linked list item as used by all kernel features for event management. *\/$/;"	m	struct:tmrTimerControl	file:
-xTimerParameters	FreeRTOS/timers.c	/^		TimerParameter_t xTimerParameters;$/;"	m	union:tmrTimerQueueMessage::__anon7	file:
+xTimerParameters	FreeRTOS/timers.c	/^		TimerParameter_t xTimerParameters;$/;"	m	union:tmrTimerQueueMessage::__anon8	file:
 xTimerPendFunctionCall	FreeRTOS/include/mpu_wrappers.h	165;"	d
 xTimerPendFunctionCall	FreeRTOS/timers.c	/^	BaseType_t xTimerPendFunctionCall( PendedFunction_t xFunctionToPend, void *pvParameter1, uint32_t ulParameter2, TickType_t xTicksToWait )$/;"	f
 xTimerPendFunctionCallFromISR	FreeRTOS/timers.c	/^	BaseType_t xTimerPendFunctionCallFromISR( PendedFunction_t xFunctionToPend, void *pvParameter1, uint32_t ulParameter2, BaseType_t *pxHigherPriorityTaskWoken )$/;"	f

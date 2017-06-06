@@ -70,7 +70,7 @@
 /* Scheduler includes. */
 #include "FreeRTOS.h"
 #include "task.h"
-
+#include <stdio.h>
 /* For backward compatibility, ensure configKERNEL_INTERRUPT_PRIORITY is
 defined.  The value should also ensure backward compatibility.
 FreeRTOS.org versions prior to V4.4.0 did not include this definition. */
@@ -269,14 +269,15 @@ portBASE_TYPE xPortStartScheduler( void )
 {
 	/* configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to 0.
 	See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html */
-	configASSERT( configMAX_SYSCALL_INTERRUPT_PRIORITY );
+	printf("Inside xport() of port.c");
+	//configASSERT( configMAX_SYSCALL_INTERRUPT_PRIORITY );
 
 	#if( configASSERT_DEFINED == 1 )
 	{
 		volatile unsigned long ulOriginalPriority;
 		volatile char * const pcFirstUserPriorityRegister = ( volatile char * const ) ( portNVIC_IP_REGISTERS_OFFSET_16 + portFIRST_USER_INTERRUPT_NUMBER );
 		volatile unsigned char ucMaxPriorityValue;
-
+		//printf("Inside config assert");
 		/* Determine the maximum priority from which ISR safe FreeRTOS API
 		functions can be called.  ISR safe functions are those that end in
 		"FromISR".  FreeRTOS maintains separate thread and ISR API functions to
@@ -325,7 +326,7 @@ portBASE_TYPE xPortStartScheduler( void )
 
 	/* Initialise the critical nesting count ready for the first task. */
 	uxCriticalNesting = 0;
-
+	//printf("Inside vStartScheduler in port.c");
 	/* Start the first task. */
 	prvPortStartFirstTask();
 

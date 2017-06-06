@@ -42,7 +42,7 @@ int _read(int file, char *ptr, int len) {
   }
   return todo;
 }
- 
+#if 0 
 static char *heap_end = 0;
 caddr_t _sbrk(int incr) {
   extern char __cs3_heap_start; /* Defined by the linker */
@@ -59,6 +59,7 @@ caddr_t _sbrk(int incr) {
   heap_end += incr;
   return (caddr_t) prev_heap_end;
 }
+#endif
  
 int _write(int file, char *ptr, int len) {
   int todo;

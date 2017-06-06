@@ -10,11 +10,16 @@ INC_FLAGS = $(INCLUDEFLAG)$(INC_FREERTOS) $(INCLUDEFLAG)$(FREERTOS_PORT_SRC) $(I
 all:
 #  Main file compile
 
-	arm-none-eabi-gcc -mthumb -mcpu=cortex-m3 -T $(QEMU_SRC)lm3s6965.ld $(INC_FLAGS) $(APP_SRC)test.c $(QEMU_SRC)reset.S $(APP_SRC)syscalls.c $(FREERTOS_SRC)list.c  $(FREERTOS_SRC)tasks.c  $(FREERTOS_PORT_SRC)port.c $(FREERTOS_MEMMANG_SRC)heap_1.c $(FREERTOS_SRC)timers.c -o $(bin)main
+	arm-none-eabi-gcc -g -mthumb -mcpu=cortex-m3 -T $(QEMU_SRC)lm3s6965.ld $(INC_FLAGS) $(APP_SRC)test.c $(QEMU_SRC)reset.S $(APP_SRC)syscalls.c $(FREERTOS_SRC)list.c  $(FREERTOS_SRC)tasks.c  $(FREERTOS_PORT_SRC)port.c $(FREERTOS_MEMMANG_SRC)heap_1.c  -o $(bin)main
 
 	arm-none-eabi-objcopy -O binary $(bin)main $(bin)main.bin
-test:
+
+test_qemu:
 	qemu-system-arm -M lm3s6965evb -m 88K --kernel main.bin --serial stdio
+
+gdb_qemu:
+	qemu-system-arm -M lm3s6965evb -m 88K --kernel main.bin --serial stdio -gdb tcp::1234
+
 clean:
-	rm *.o
+	rm main
 	rm *.bin
