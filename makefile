@@ -129,5 +129,10 @@ demos/freertos_multithread/main.elf: $(FREE_RTOS_SRC_FILES)
 demos/freertos_multithread/main.elf: $(FREE_RTOS_SRC)/portable/MemMang/heap_1.c
 	$(CC) $(CFLAGS_LINK) -Idemos/freertos_multithread/ -I$(FREE_RTOS_INC) -I$(FREE_RTOS_PORT_INC) -o $@ $^
 
+make test_qemu:
+	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/freertos_multithread/main.bin -serial stdio
+
+make test_qemu_udp:
+	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/freertos_multithread/main.bin -serial udp:$(UDP):7777,server
 
 
