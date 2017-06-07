@@ -1,0 +1,7 @@
+1) To listen in linux :  netcat -ul 7777
+
+2) To run on network : qemu-system-arm -M stm32-p103 -kernel main.bin -serial  udp:127.0.0.1:7777,server
+
+3) Qemu for stm, git repo : https://github.com/beckus/qemu_stm32
+
+4) Demo projects for STM : https://github.com/beckus/stm32_p103_demos/blob/master/makefile
