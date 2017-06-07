@@ -93,11 +93,11 @@ $(QEMU_RUN_TARGETS): %_QEMURUN : %_ALL
 
 $(QEMU_RUN_PTY_TARGETS): %_QEMURUN_PTY : %_ALL
 	-killall -q qemu-system-arm
-	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/$*/main.bin -serial pty
+	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/freertos_multithread/main.bin -serial stdio
 	
 $(QEMU_RUN_TEL_TARGETS): %_QEMURUN_TEL : %_ALL
 	-killall -q qemu-system-arm
-	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/$*/main.bin -serial tcp::7777,server
+	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/freertos_multithread/main.bin -serial tcp::7777,server
 
 # QEMU debug targets
 $(QEMU_DBG_TARGETS): %_QEMUDBG : %_ALL
@@ -106,7 +106,7 @@ $(QEMU_DBG_TARGETS): %_QEMUDBG : %_ALL
 
 $(QEMU_DBG_PTY_TARGETS): %_QEMUDBG_PTY : %_ALL
 	-killall -q qemu-system-arm
-	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -gdb tcp::3333 -S -kernel demos/$*/main.bin -serial pty
+	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -gdb tcp::3333 -S -kernel demos/$*/main.bin -serial stdio
 	
 $(QEMU_DBG_TEL_TARGETS): %_QEMUDBG_TEL : %_ALL
 	-killall -q qemu-system-arm

@@ -89,16 +89,6 @@ char receive_byte_rtos(void)
     return msg.ch;
 }
 
-void led_flash_task( void *pvParameters )
-{
-    while(1) {
-        /* Toggle the LED. */
-        GPIOC->ODR = GPIOC->ODR ^ 0x00001000;
-
-        /* Wait one second. */
-        vTaskDelay(100);
-    }
-}
 
 void rs232_xmit_msg_task( void *pvParameters )
 {
@@ -189,10 +179,6 @@ void serial_readwrite_task( void *pvParameters )
 
 int main(void)
 {
-    init_led();
-
-    init_button();
-    enable_button_interrupts();
 
     init_rs232();
     enable_rs232_interrupts();
@@ -203,8 +189,6 @@ int main(void)
     vSemaphoreCreateBinary(serial_tx_wait_sem);
     serial_rx_queue = xQueueCreate( 1, sizeof( serial_ch_msg ) );
 
-    /* Create a task to flash the LED. */
-    xTaskCreate( led_flash_task, ( signed portCHAR * ) "LED Flash", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 5, NULL );
 
     /* Create tasks to queue a string to be written to the RS232 port. */
     xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
