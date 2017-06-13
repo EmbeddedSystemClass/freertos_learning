@@ -1,5 +1,6 @@
 # Declare command line tools - assume these are in the path
 CC	  = arm-none-eabi-gcc
+CXX	  = arm-none-eabi-g++
 LD	  = arm-none-eabi-ld
 AS	  = arm-none-eabi-as
 CP	  = arm-none-eabi-objcopy
@@ -50,6 +51,11 @@ FREE_RTOS_SRC_FILES = $(FREE_RTOS_SRC)/croutine.c $(FREE_RTOS_SRC)/list.c $(FREE
 FREE_RTOS_INC = $(FREE_RTOS_SRC)/include/
 FREE_RTOS_PORT_INC = $(FREE_RTOS_SRC)/portable/GCC/ARM_CM3/
 
+# List ArduinoJSON resources
+A_JSON_HEAD = $(SRC)/libraries/JSON/
+A_JSON_LIB = $(SRC)/libraries/JSON/ArduinoJson
+A_JSON_WRAPPER = demos/arduino_json/
+
 # List path to demo build output files
 OUTPUT_FILES = $(addsuffix /main,$(DEMO_FOLDERS))
 ELF_FILES	= $(addsuffix .elf,$(OUTPUT_FILES))
@@ -73,8 +79,10 @@ QEMU_DBG_TEL_TARGETS = $(addsuffix _QEMUDBG_TEL,$(DEMOS))
 
 # Generic targets
 .PHONY: clean $(ALL_TARGETS) 
-
-all: $(ALL_TARGETS)
+#  Assign 0 if main is C file
+#  Assign 1 if main is c++ file
+ 
+all: $(ALL_TARGETS) 
 
 clean:
 	find . -type f -name "*.o" -exec rm {} \;
@@ -122,12 +130,18 @@ $(LIST_FILES): %.list : %.elf
 $(BIN_FILES): %.bin : %.elf
 	$(CP) $(CPFLAGS) $< $@
 
+$(JSON_OBJS): JSON.o
+
+JSON.o:	demos/arduino_json/AJSON.cpp
+	arm-linux-gnueabi-g++  -O0 -g -c -mcpu=cortex-m3 -mthumb  -I$(A_JSON_LIB) -I$(A_JSON_HEAD) -Idemos/arduino_json -o $@ $^
+
 # Targets to build individual demos
 demos/freertos_multithread/main.elf: demos/freertos_multithread/main.c
 demos/freertos_multithread/main.elf: $(COMMON_FILES)
 demos/freertos_multithread/main.elf: $(FREE_RTOS_SRC_FILES)
 demos/freertos_multithread/main.elf: $(FREE_RTOS_SRC)/portable/MemMang/heap_1.c
-	$(CC) $(CFLAGS_LINK) -Idemos/freertos_multithread/ -I$(FREE_RTOS_INC) -I$(FREE_RTOS_PORT_INC) -o $@ $^
+demos/freertos_multithread/main.elf: $(JSON_OBJS)
+	$(CC) $(CFLAGS_LINK)  -Idemos/freertos_multithread/ -I$(FREE_RTOS_INC) -I$(FREE_RTOS_PORT_INC) -I$(A_JSON_WRAPPER)  $(JSON_OBJS) -o $@ $^
 
 test_qemu:
 	$(QEMU_ARM_DIR)qemu-system-arm -M stm32-p103 -kernel demos/freertos_multithread/main.bin -serial stdio

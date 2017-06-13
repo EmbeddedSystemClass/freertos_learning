@@ -8,6 +8,9 @@
 #include "semphr.h"
 #include <string.h>
 
+/*  Arduino JSON file  */
+#include "JSON.h"
+
 static void setup_hardware( void );
 
 volatile xQueueHandle serial_str_queue = NULL;
@@ -130,6 +133,11 @@ void queue_str_task(const char *str, int delay)
     }
 }
 
+void JSON_buffer_task()
+{
+    //encoding_JSON();
+}
+
 void queue_str_task1( void *pvParameters )
 {
     queue_str_task("Hello 1\n", 200);
@@ -199,6 +207,9 @@ int main(void)
 
     /* Create a task to receive characters from the RS232 port and echo them back to the RS232 port. */
     xTaskCreate(serial_readwrite_task, ( signed portCHAR * ) "Serial Read/Write", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+
+    /* Create a task to create a JSON buffer */
+  //  xTaskCreate(JSON_buffer_task, ( signed portCHAR * ) "Arduino JSON", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
 
     /* Start running the tasks. */
     vTaskStartScheduler();
