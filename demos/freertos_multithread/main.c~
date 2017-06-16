@@ -7,7 +7,7 @@
 #include "queue.h"
 #include "semphr.h"
 #include <string.h>
-
+#include "tiny-json.h"
 static void setup_hardware( void );
 
 volatile xQueueHandle serial_str_queue = NULL;
@@ -89,16 +89,6 @@ char receive_byte_rtos(void)
     return msg.ch;
 }
 
-void led_flash_task( void *pvParameters )
-{
-    while(1) {
-        /* Toggle the LED. */
-        GPIOC->ODR = GPIOC->ODR ^ 0x00001000;
-
-        /* Wait one second. */
-        vTaskDelay(100);
-    }
-}
 
 void rs232_xmit_msg_task( void *pvParameters )
 {
@@ -141,8 +131,32 @@ void queue_str_task(const char *str, int delay)
 }
 
 void queue_str_task1( void *pvParameters )
-{
-    queue_str_task("Hello 1\n", 200);
+{	
+	char str[] = "{\n"
+        "\t\"firstName\": \"Bidhan\",\n"
+        "\t\"lastName\": \"Chatterjee\",\n"
+        "\t\"age\": 40,\n"
+        "\t\"address\": {\n"
+        "\t\t\"streetAddress\": \"144 J B Hazra Road\",\n"
+        "\t\t\"city\": \"Burdwan\",\n"
+        "\t\t\"state\": \"Paschimbanga\",\n"
+        "\t\t\"postalCode\": \"713102\"\n"
+        "\t},\n"
+        "\t\"phoneList\": [\n"
+        "\t\t{ \"type\": \"personal\", \"number\": \"09832209761\" },\n"
+        "\t\t{ \"type\": \"fax\", \"number\": \"91-342-2567692\" }\n"
+        "\t]\n"
+        "}\n";
+   // puts( str );
+    json_t mem[32];
+    json_t const* json = json_create( str, mem, sizeof mem / sizeof *mem );
+    //char const* firstNameVal = json_getPropertyValue( json, "firstName" );
+    //char const* lastName = json_getPropertyValue( json, "lastName" );
+
+    json_t const* age = json_getProperty( json, "age" );
+    int const ageVal = (int)json_getInteger( age );
+    //int a =5,b=0;
+    //queue_str_task(lastName, 200);
 }
 
 void queue_str_task2( void *pvParameters )
@@ -189,10 +203,8 @@ void serial_readwrite_task( void *pvParameters )
 
 int main(void)
 {
-    init_led();
 
-    init_button();
-    enable_button_interrupts();
+    //printf( "Last Name: %s.\n", lastName );
 
     init_rs232();
     enable_rs232_interrupts();
@@ -203,8 +215,6 @@ int main(void)
     vSemaphoreCreateBinary(serial_tx_wait_sem);
     serial_rx_queue = xQueueCreate( 1, sizeof( serial_ch_msg ) );
 
-    /* Create a task to flash the LED. */
-    xTaskCreate( led_flash_task, ( signed portCHAR * ) "LED Flash", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 5, NULL );
 
     /* Create tasks to queue a string to be written to the RS232 port. */
     xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );

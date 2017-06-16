@@ -7,7 +7,7 @@
 #include "queue.h"
 #include "semphr.h"
 #include <string.h>
-
+#include "tiny-json.h"
 static void setup_hardware( void );
 
 volatile xQueueHandle serial_str_queue = NULL;
@@ -131,8 +131,32 @@ void queue_str_task(const char *str, int delay)
 }
 
 void queue_str_task1( void *pvParameters )
-{
-    queue_str_task("Hello 1\n", 200);
+{	
+	char str[] = "{\n"
+        "\t\"firstName\": \"Bidhan\",\n"
+        "\t\"lastName\": \"Chatterjee\",\n"
+        "\t\"age\": 40,\n"
+        "\t\"address\": {\n"
+        "\t\t\"streetAddress\": \"144 J B Hazra Road\",\n"
+        "\t\t\"city\": \"Burdwan\",\n"
+        "\t\t\"state\": \"Paschimbanga\",\n"
+        "\t\t\"postalCode\": \"713102\"\n"
+        "\t},\n"
+        "\t\"phoneList\": [\n"
+        "\t\t{ \"type\": \"personal\", \"number\": \"09832209761\" },\n"
+        "\t\t{ \"type\": \"fax\", \"number\": \"91-342-2567692\" }\n"
+        "\t]\n"
+        "}\n";
+   // puts( str );
+    json_t mem[32];
+    json_t const* json = json_create( str, mem, sizeof mem / sizeof *mem );
+    char const* firstNameVal = json_getPropertyValue( json, "firstName" );
+    char const* lastName = json_getPropertyValue( json, "lastName" );
+
+    //json_t const* age = json_getProperty( json, "age" );
+    //int const ageVal = (int)json_getInteger( age );
+    //int a =5,b=0;
+    queue_str_task(lastName, 200);
 }
 
 void queue_str_task2( void *pvParameters )
@@ -179,6 +203,8 @@ void serial_readwrite_task( void *pvParameters )
 
 int main(void)
 {
+
+    //printf( "Last Name: %s.\n", lastName );
 
     init_rs232();
     enable_rs232_interrupts();
