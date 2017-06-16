@@ -17,7 +17,7 @@ volatile xQueueHandle serial_rx_queue = NULL;
 /* Queue structure used for passing messages. */
 typedef struct
 {
-    char str[100];
+    char str[300];
 } serial_str_msg;
 
 /* Queue structure used for passing characters. */
@@ -131,32 +131,20 @@ void queue_str_task(const char *str, int delay)
 }
 
 void queue_str_task1( void *pvParameters )
-{	
-	char str[] = "{\n"
-        "\t\"firstName\": \"Bidhan\",\n"
-        "\t\"lastName\": \"Chatterjee\",\n"
-        "\t\"age\": 40,\n"
-        "\t\"address\": {\n"
-        "\t\t\"streetAddress\": \"144 J B Hazra Road\",\n"
-        "\t\t\"city\": \"Burdwan\",\n"
-        "\t\t\"state\": \"Paschimbanga\",\n"
-        "\t\t\"postalCode\": \"713102\"\n"
-        "\t},\n"
-        "\t\"phoneList\": [\n"
-        "\t\t{ \"type\": \"personal\", \"number\": \"09832209761\" },\n"
-        "\t\t{ \"type\": \"fax\", \"number\": \"91-342-2567692\" }\n"
-        "\t]\n"
-        "}\n";
-   // puts( str );
+{	 
+    char str[] = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
+    //puts( str );
     json_t mem[32];
     json_t const* json = json_create( str, mem, sizeof mem / sizeof *mem );
     char const* firstNameVal = json_getPropertyValue( json, "firstName" );
     char const* lastName = json_getPropertyValue( json, "lastName" );
-
+    //char const* city = json_getPropertyValue( json, "city" );
+    //char const* state = json_getPropertyValue( json, "state" );
+    int age= json_getPropertyValue(json,"time");
     //json_t const* age = json_getProperty( json, "age" );
     //int const ageVal = (int)json_getInteger( age );
     //int a =5,b=0;
-    queue_str_task(lastName, 200);
+    queue_str_task(age, 200);
 }
 
 void queue_str_task2( void *pvParameters )
@@ -180,7 +168,6 @@ void serial_readwrite_task( void *pvParameters )
         do {
             /* Receive a byte from the RS232 port (this call will block). */
             ch = receive_byte_rtos();
-
             /* If the byte is an end-of-line type character, then finish the
              * string and indicate we are done.
              */
@@ -214,11 +201,11 @@ int main(void)
     serial_str_queue = xQueueCreate( 10, sizeof( serial_str_msg ) );
     vSemaphoreCreateBinary(serial_tx_wait_sem);
     serial_rx_queue = xQueueCreate( 1, sizeof( serial_ch_msg ) );
-
+#if 1
 
     /* Create tasks to queue a string to be written to the RS232 port. */
-    xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
-    xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+   // xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 1024 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+    //xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
 
     /* Create a task to write messages from the queue to the RS232 port. */
     xTaskCreate(rs232_xmit_msg_task, ( signed portCHAR * ) "Serial Xmit Str", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 2, NULL );
@@ -228,7 +215,19 @@ int main(void)
 
     /* Start running the tasks. */
     vTaskStartScheduler();
-
+#endif
+#if 0
+        char str[] = "{\n"
+       // "\t\"firstName\": \"Bidhan\",\n"
+       // "\t\"lastName\": \"Chatterjee\",\n"
+        "\t\"age\": 40,\n"
+        "}\n";
+        int curr_char = 0;
+        while(str[curr_char] != '\0') {
+            send_byte_rtos(str[curr_char]);
+            curr_char++;
+        }
+#endif
     return 0;
 }
 
