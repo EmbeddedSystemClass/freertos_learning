@@ -28,25 +28,33 @@ typedef struct
 
 /* IRQ handler to handle USART2 interrupts (both transmit and receive
  * interrupts). */
+
+#if 1
 void USART2_IRQHandler(void)
 {
     static signed portBASE_TYPE xHigherPriorityTaskWoken;
     serial_ch_msg rx_msg;
-
+    serial_str_msg msg;
     /* If this interrupt is for a transmit... */
     if(USART_GetITStatus(USART2, USART_IT_TXE) != RESET) {
         /* "give" the serial_tx_wait_sem semaphore to notify processes that
          * the buffer has a spot free for the next byte.
          */
         xSemaphoreGiveFromISR(serial_tx_wait_sem, &xHigherPriorityTaskWoken);
+       // while(!xQueueSendToBack(serial_str_queue, "inside isr for tx", portMAX_DELAY));
 
         /* Disables the transmit interrupt. */
         USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
     /* If this interrupt is for a receive... */
     } else if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {
+       // while(!xQueueSendToBack(serial_str_queue, "inside isr for rx", portMAX_DELAY));
         /* Receive the byte from the buffer. */
-        rx_msg.ch = USART_ReceiveData(USART2);
+        while(1);
+        strcpy(msg.str, "inside read isr:");
+        while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
 
+        rx_msg.ch = USART_ReceiveData(USART2);
+        USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
         /* Queue the received byte. */
         if(!xQueueSendToBackFromISR(serial_rx_queue, &rx_msg, &xHigherPriorityTaskWoken)) {
             /* If there was an error queueing the received byte, freeze. */
@@ -63,7 +71,7 @@ void USART2_IRQHandler(void)
         taskYIELD();
     }
 }
-
+#endif
 void send_byte_rtos(char ch)
 {
     /* Wait until the RS232 port can receive another byte (this semaphore is
@@ -81,11 +89,13 @@ void send_byte_rtos(char ch)
 
 char receive_byte_rtos(void)
 {
+    USART_ITConfig(USART2, USART_IT_RXNE, DISABLE);
     serial_ch_msg msg;
 
     /* Wait for a byte to be queued by the receive interrupt handler. */
     while(!xQueueReceive(serial_rx_queue, &msg, portMAX_DELAY));
-
+    //msg.ch = USART_ReceiveData(USART2);
+    msg.ch = "\n";
     return msg.ch;
 }
 
@@ -160,30 +170,42 @@ void serial_readwrite_task( void *pvParameters )
     int done;
 
     /* Prepare the response message to be queued. */
-    strcpy(msg.str, "Got:");
-
+    //strcpy(msg.str, "inside read task:");
+    // while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
     while(1) {
+
+
         curr_char = 4;
         done = 0;
+        strcpy(msg.str, "inside read task:");
+        while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
+       // while(!xQueueSendToBack(serial_str_queue, "before while", portMAX_DELAY));
         do {
             /* Receive a byte from the RS232 port (this call will block). */
+            strcpy(msg.str, "\nInside while\n");
+            while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
             ch = receive_byte_rtos();
             /* If the byte is an end-of-line type character, then finish the
              * string and indicate we are done.
              */
+            strcpy(msg.str, "\nAfter read byte\n");
+            while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
             if((ch == '\r') || (ch == '\n')) {
                 msg.str[curr_char] = '\n';
                 msg.str[curr_char+1] = '\0';
-                done = -1;
+                done = 1;
+                //while(!xQueueSendToBack(serial_str_queue, &done, portMAX_DELAY));
             /* Otherwise, add the character to the response string. */
             } else {
                 msg.str[curr_char++] = ch;
             }
         } while(!done);
-
+        strcpy(msg.str, "Outside while while\n");
+        while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
         /* Once we are done building the response string, queue the response to
          * be sent to the RS232 port.
          */
+        vTaskDelay(500);
         while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
     }
 }
@@ -200,34 +222,53 @@ int main(void)
     /* Create the queue to hold messages to be written to the RS232. */
     serial_str_queue = xQueueCreate( 10, sizeof( serial_str_msg ) );
     vSemaphoreCreateBinary(serial_tx_wait_sem);
-    serial_rx_queue = xQueueCreate( 1, sizeof( serial_ch_msg ) );
+    serial_rx_queue = xQueueCreate( 10, sizeof( serial_ch_msg ) );
 #if 1
 
     /* Create tasks to queue a string to be written to the RS232 port. */
-   // xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 1024 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
-    //xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+    xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 1024 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+    xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
 
     /* Create a task to write messages from the queue to the RS232 port. */
     xTaskCreate(rs232_xmit_msg_task, ( signed portCHAR * ) "Serial Xmit Str", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 2, NULL );
 
     /* Create a task to receive characters from the RS232 port and echo them back to the RS232 port. */
-    xTaskCreate(serial_readwrite_task, ( signed portCHAR * ) "Serial Read/Write", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+    xTaskCreate(serial_readwrite_task, ( signed portCHAR * ) "Serial Read/Write", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 20, NULL );
 
     /* Start running the tasks. */
     vTaskStartScheduler();
 #endif
 #if 0
-        char str[] = "{\n"
-       // "\t\"firstName\": \"Bidhan\",\n"
-       // "\t\"lastName\": \"Chatterjee\",\n"
-        "\t\"age\": 40,\n"
-        "}\n";
-        int curr_char = 0;
+    char str[] = "{\n"
+// "\t\"firstName\": \"Bidhan\",\n"
+// "\t\"lastName\": \"Chatterjee\",\n"
+    "\t\"age\": 40,\n"
+    "}\n";
+    int curr_char = 0;
         while(str[curr_char] != '\0') {
             send_byte_rtos(str[curr_char]);
             curr_char++;
         }
 #endif
+#if 0
+    init_led();
+    USART_Cmd(USART2, ENABLE);
+
+    while(1) {
+        /* Loop until the USART2 has received a byte. */
+       // while(USART_GetFlagStatus(USART2, USART_FLAG_RXNE) == RESET);
+        uint8_t b;
+        /* Capture the received byte and print it out. */
+        b = (USART_ReceiveData(USART2) & 0x7F);
+        send_byte('G');
+        send_byte('o');
+        send_byte('t');
+        send_byte(':');
+        send_byte(b);
+        send_byte('\n');
+}
+#endif 
+
     return 0;
 }
 
