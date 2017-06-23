@@ -207,7 +207,7 @@ demos/freertos_singlethread/main.elf: $(FREE_RTOS_SRC_FILES)
 demos/freertos_singlethread/main.elf: $(FREE_RTOS_SRC)/portable/MemMang/heap_1.c
 	$(CC) $(CFLAGS_LINK) -Idemos/freertos_singlethread/ -I$(FREE_RTOS_INC) -I$(FREE_RTOS_PORT_INC) -o $@ $^
 
-
+demos/freertos_multithread/main.elf: demos/freertos_multithread/tiny-json.c
 demos/freertos_multithread/main.elf: demos/freertos_multithread/main.c
 demos/freertos_multithread/main.elf: $(COMMON_FILES)
 demos/freertos_multithread/main.elf: $(FREE_RTOS_SRC_FILES)

@@ -1,13 +1,14 @@
 #define USE_STDPERIPH_DRIVER
-#include "stm32f10x.h"
+#define PRETTY 1
 
+#include "stm32f10x.h"
 /* Scheduler includes. */
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
 #include <string.h>
-
+#include "tiny-json.h"
 static void setup_hardware( void );
 
 volatile xQueueHandle serial_str_queue = NULL;
@@ -142,7 +143,7 @@ void queue_str_task(const char *str, int delay)
 
 void queue_str_task1( void *pvParameters )
 {
-    queue_str_task("Hello 1\n", 200);
+    queue_str_task("heartbeat\n", 1000);
 }
 
 void queue_str_task2( void *pvParameters )
@@ -158,10 +159,10 @@ void serial_readwrite_task( void *pvParameters )
     int done;
 
     /* Prepare the response message to be queued. */
-    strcpy(msg.str, "Got:");
+    //strcpy(msg.str, "Got:");
 
     while(1) {
-        curr_char = 4;
+        curr_char = 0;
         done = 0;
         do {
             /* Receive a byte from the RS232 port (this call will block). */
@@ -172,18 +173,24 @@ void serial_readwrite_task( void *pvParameters )
              */
             if((ch == '\r') || (ch == '\n')) {
                 msg.str[curr_char] = '\n';
-                msg.str[curr_char+1] = '\0';
+                //msg.str[curr_char+1] = '\0';
                 done = -1;
             /* Otherwise, add the character to the response string. */
             } else {
                 msg.str[curr_char++] = ch;
             }
         } while(!done);
-
+        json_t mem[100];
+        json_t const* json = json_create( msg.str, mem, sizeof mem / sizeof *mem );
+        char * version = json_getPropertyValue( json, "Version" );
+        strcat(version,"\n");
+#if PRETTY
         /* Once we are done building the response string, queue the response to
          * be sent to the RS232 port.
          */
-        while(!xQueueSendToBack(serial_str_queue, &msg, portMAX_DELAY));
+        //version = "the version from json: "+*version;
+#endif
+        while(!xQueueSendToBack(serial_str_queue, version, portMAX_DELAY));
     }
 }
 
@@ -204,11 +211,11 @@ int main(void)
     serial_rx_queue = xQueueCreate( 1, sizeof( serial_ch_msg ) );
 
     /* Create a task to flash the LED. */
-    xTaskCreate( led_flash_task, ( signed portCHAR * ) "LED Flash", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 5, NULL );
+    //xTaskCreate( led_flash_task, ( signed portCHAR * ) "LED Flash", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 5, NULL );
 
     /* Create tasks to queue a string to be written to the RS232 port. */
     xTaskCreate( queue_str_task1, ( signed portCHAR * ) "Serial Write 1", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
-    xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
+   // xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
 
     /* Create a task to write messages from the queue to the RS232 port. */
     xTaskCreate(rs232_xmit_msg_task, ( signed portCHAR * ) "Serial Xmit Str", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 2, NULL );
