@@ -184,6 +184,7 @@ void serial_readwrite_task( void *pvParameters )
         json_t const* json = json_create( msg.str, mem, sizeof mem / sizeof *mem );
         char * version = json_getPropertyValue( json, "Version" );
         strcat(version,"\n");
+        
 #if PRETTY
         /* Once we are done building the response string, queue the response to
          * be sent to the RS232 port.
@@ -191,6 +192,7 @@ void serial_readwrite_task( void *pvParameters )
         //version = "the version from json: "+*version;
 #endif
         while(!xQueueSendToBack(serial_str_queue, version, portMAX_DELAY));
+       
     }
 }
 
@@ -218,7 +220,7 @@ int main(void)
    // xTaskCreate( queue_str_task2, ( signed portCHAR * ) "Serial Write 2", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
 
     /* Create a task to write messages from the queue to the RS232 port. */
-    xTaskCreate(rs232_xmit_msg_task, ( signed portCHAR * ) "Serial Xmit Str", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 2, NULL );
+    xTaskCreate(rs232_xmit_msg_task, ( signed portCHAR * ) "Serial Xmit Str", 512 /* stack size */, NULL, tskIDLE_PRIORITY , NULL );
 
     /* Create a task to receive characters from the RS232 port and echo them back to the RS232 port. */
     xTaskCreate(serial_readwrite_task, ( signed portCHAR * ) "Serial Read/Write", 512 /* stack size */, NULL, tskIDLE_PRIORITY + 10, NULL );
