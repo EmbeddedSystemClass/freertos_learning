@@ -320,10 +320,10 @@ char receive_byte_rtos(void)
      28c:	b580      	push	{r7, lr}
      28e:	b082      	sub	sp, #8
      290:	af00      	add	r7, sp, #0
-    USART_ITConfig(USART2, USART_IT_RXNE, DISABLE);
+    USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
      292:	4810      	ldr	r0, [pc, #64]	; (2d4 <receive_byte_rtos+0x48>)
      294:	f240 5125 	movw	r1, #1317	; 0x525
-     298:	f04f 0200 	mov.w	r2, #0
+     298:	f04f 0201 	mov.w	r2, #1
      29c:	f002 fd8a 	bl	2db4 <USART_ITConfig>
     serial_ch_msg msg;
 
@@ -3967,10 +3967,10 @@ void enable_rs232_interrupts(void)
     1940:	f240 7127 	movw	r1, #1831	; 0x727
     1944:	f04f 0200 	mov.w	r2, #0
     1948:	f001 fa34 	bl	2db4 <USART_ITConfig>
-    USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+    USART_ITConfig(USART2, USART_IT_RXNE, DISABLE);
     194c:	480c      	ldr	r0, [pc, #48]	; (1980 <enable_rs232_interrupts+0x48>)
     194e:	f240 5125 	movw	r1, #1317	; 0x525
-    1952:	f04f 0201 	mov.w	r2, #1
+    1952:	f04f 0200 	mov.w	r2, #0
     1956:	f001 fa2d 	bl	2db4 <USART_ITConfig>
 
     /* Enable the USART2 IRQ in the NVIC module (so that the USART2 interrupt

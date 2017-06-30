@@ -1,0 +1,21 @@
+diff --git a/hw/arm/stm32_p103.c b/hw/arm/stm32_p103.c
+index 2e581ee..6c2bf18 100644
+--- a/hw/arm/stm32_p103.c
++++ b/hw/arm/stm32_p103.c
+@@ -130,7 +130,7 @@ static void stm32_p103_init(MachineState *machine)
+             (Stm32Uart *)uart2,
+             serial_hds[0],
+             STM32_USART2_NO_REMAP);
+-    
++#if 0
+     stm32_uart_connect(
+             (Stm32Uart *)uart1,
+             serial_hds[0],
+@@ -140,6 +140,7 @@ static void stm32_p103_init(MachineState *machine)
+             (Stm32Uart *)uart3,
+             serial_hds[0],
+             STM32_USART3_NO_REMAP);
++#endif
+  }
+ 
+ static QEMUMachine stm32_p103_machine = {

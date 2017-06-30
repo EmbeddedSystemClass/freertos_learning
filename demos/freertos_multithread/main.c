@@ -89,13 +89,13 @@ void send_byte_rtos(char ch)
 
 char receive_byte_rtos(void)
 {
-    USART_ITConfig(USART2, USART_IT_RXNE, DISABLE);
+    USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
     serial_ch_msg msg;
 
     /* Wait for a byte to be queued by the receive interrupt handler. */
     while(!xQueueReceive(serial_rx_queue, &msg, portMAX_DELAY));
-    //msg.ch = USART_ReceiveData(USART2);
-    msg.ch = "\n";
+    msg.ch = USART_ReceiveData(USART2);
+    //msg.ch = "\n";
     return msg.ch;
 }
 
